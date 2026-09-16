@@ -1,85 +1,93 @@
-/* Estilos base - personalize para seu squad */
-*{
+/* Estilos base - Squad G */
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               'Segoe UI', sans-serif;
 
- background-color: rgb(210, 208, 208);          
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: rgb(210, 208, 208);
 }
 
-ul, li, a {
+ul {
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 10px;
   margin-bottom: 15px;
+  list-style: none;
+}
+
+li {
+  display: flex;
+}
+
+a {
   text-decoration: none;
   color: black;
 }
-.hero h1,a{
-  text-align:center;
-  display: flex;
-  flex-direction: column;
-}
-.hero{
-  text-align:center;
-  padding: 40px 20px;
-  border-radius: 8px; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  width: 100%;
-  justify-content: center;
-}
-a{
-  text-decoration: none; 
-}
+
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-.titulo-principal a {
-  font-size: 2,5rem;
-  margin-bottom: 5px;
+
+.hero {
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 a {
   display: block;
+  margin-bottom: 5px;
+  font-size: 2.5rem;
 }
-.projetos, .contato {
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: 0 auto;
+
+.projetos,
+.contato {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
 }
+
+.projeto {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .form-contato input[type="text"],
 .form-contato input[type="email"],
 .form-contato textarea {
-    width: 100%; 
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
 }
-.projeto {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.footer {
-    background-color: #343a40;
-    color: #bbb;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
-    margin-top: 40px;
-}
+
 .form-contato button[type="submit"] {
-    background-color: #286ea7; 
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 10px 20px;
+  color: white;
+  background-color: #286ea7;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  color: #bbb;
+  font-size: 0.9em;
+  text-align: center;
+  background-color: #343a40;
 }
