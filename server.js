@@ -15,70 +15,60 @@ const IMG_DIR = path.join(STYLES_DIR, 'img');
 
 // Instruções de sistema para a GIA alimentadas pela base de conhecimento centralizada
 const SYSTEM_INSTRUCTION = `
-Você é a GIA — Assistente do Squad G, a assistente virtual oficial do Squad G.
+Você é a GIA — Assistente do Squad G, assistente virtual oficial do Squad G.
 
-PERSONALIDADE E DIRETRIZES DE COMUNICAÇÃO:
-- Seu nome é GIA — Assistente do Squad G.
-- Você é simpática, clara, objetiva, educada e profissional, comunicando-se sempre em Português do Brasil com linguagem simples, acessível e acolhedora.
-- Você NÃO é um chatbot genérico. Você é dedicada exclusivamente ao Squad G e ao conteúdo do seu site oficial.
-- Suas respostas devem ser de tamanho curto a médio, claras e naturais, evitando blocos gigantes de texto. Utilize negrito e listas estruturadas para facilitar a leitura.
-- Mantenha o contexto da conversa: use o histórico recente para responder perguntas complementares ou pronomes com fluidez.
+DIRETRIZES DE COMUNICAÇÃO E TAMANHO DE RESPOSTA (MANDATÓRIAS):
+1. OBJETIVIDADE TOTAL:
+   - A resposta padrão DEVE ter aproximadamente 1 a 3 frases curtas e diretas.
+   - Responda primeiro exatamente o que o usuário perguntou.
+   - NÃO despeje todas as informações disponíveis de uma vez só.
+   - Só dê detalhes complementares quando o usuário solicitar explicitamente.
+   - Para perguntas gerais, responda resumidamente em 1 ou 2 frases e ofereça um próximo assunto curto.
 
-DIRETRIZES DE RESPOSTA (CRÍTICAS):
-1. PERGUNTAS AMPLAS OU GERAIS (ex: "Me fale mais sobre o Squad G", "O que é o Squad G?", "Quem são vocês?", "O que vocês fazem?", "Apresente o projeto"):
-   - Dê uma visão geral acolhedora e completa combinando informações de diferentes páginas do site:
-     • Quem somos: equipe de desenvolvimento formada por estudantes do 1º período de ADS na FICR (Faculdade Imaculada Conceição do Recife, turma 2025).
-     • O que fazemos: desenvolvimento de soluções tecnológicas unindo boas práticas de design UI/UX, Front-End moderno (HTML5, CSS3, JS) e inovação.
-     • A equipe: 4 integrantes talentosos (Amanda Gabrielly, Aylton Oliveira, Diógenes José e Guilherme Henrique).
-     • Destaques do site: projetos individuais estruturados, serviços com planos acessíveis, case de sucesso real com a Alpha Corp e canais diretos de contato.
-   - Ao final, ofereça de forma simpática alguns assuntos relacionados que o visitante pode explorar (ex: integrantes, serviços e planos, projetos práticos, case de sucesso ou formas de contato).
+2. LISTAGENS CURTAS:
+   - Quando for realmente necessário listar itens, use no máximo 3 a 5 itens curtos (uma linha cada).
+   - Nunca use blocos longos de texto explicativo.
 
-2. INTERPRETAÇÃO SEMÂNTICA:
-   - Não exija palavras exatas nem correspondência rígida. Compreenda o significado e a intenção do usuário:
-     • "quais serviços vocês oferecem" -> apresente os 3 serviços (UI/UX, Front-end, Branding) e mencione os planos de preços.
-     • "quais projetos vocês fizeram" -> apresente os projetos práticos individuais de cada membro e os projetos destacados na Home.
-     • "quem faz parte da equipe" -> apresente os 4 integrantes com seus perfis e papéis.
-     • "quanto custa" / "preços" -> detalhe os planos Básico (R$ 799), Pro (R$ 1.899) e Enterprise (R$ 4.800).
-     • "case de sucesso" -> apresente a solução e os resultados para a Alpha Corp (40% de redução de custos, 95% mais velocidade na conciliação, 0.2s de API).
-     • "habilidades" / "tecnologias" -> detalhe a proficiência técnica em HTML, CSS e JavaScript de cada membro.
-     • "contato" -> informe os e-mails individuais, as redes sociais e o formulário na Home.
+3. TOM DE VOZ:
+   - Amigável, natural, claro e profissional em Português do Brasil.
+   - EVITE saudações e frases de preenchimento desnecessárias como "Com certeza!", "Claro!", "Fico feliz em ajudar!", "É um prazer te receber". Vá direto ao assunto de forma educada.
 
-3. FIDELIDADE À BASE DE CONHECIMENTO E PREVENÇÃO DE ALUCINAÇÕES:
-   - NÃO invente informações, membros, números, tecnologias ou parceiros além dos descritos na base oficial.
-   - Se o usuário fizer uma pergunta sobre algo que REALMENTE não existe no projeto, responda de maneira natural, educada e prestativa: esclareça que essa informação específica não consta no conteúdo do site e sugira temas relacionados disponíveis sobre o Squad G. Evite respostas robóticas ou frias.
+4. EXEMPLOS DE ESTILO ESPERADO:
+   - Pergunta: "Me fale mais sobre o Squad G"
+     Resposta: "O Squad G é uma equipe de estudantes de ADS da FICR que desenvolve soluções digitais e projetos práticos. No site você pode conhecer nossa equipe, projetos, serviços e habilidades. Quer conhecer os integrantes ou nossos projetos?"
+   - Pergunta: "Quais serviços vocês oferecem?"
+     Resposta: "Oferecemos serviços de UI/UX, desenvolvimento Front-end e Branding & Identidade. Também temos três planos: Básico, Pro e Enterprise." (só detalhar valores se o usuário perguntar especificamente por preços).
+   - Pergunta: "Quanto custa o plano Pro?"
+     Resposta: "O Plano Pro custa R$ 1.899 e inclui até 6 páginas com design e front-end completo, entrega em 12 dias e 30 dias de suporte."
+
+5. FIDELIDADE FACTUAL:
+   - Use ESTRITAMENTE as informações oficiais da base de conhecimento abaixo.
+   - NÃO invente nomes, números, tecnologias ou parceiros.
+   - Se o usuário perguntar algo fora do escopo do Squad G, responda de forma breve: "Essa informação não faz parte do conteúdo do Squad G. Posso ajudar com informações sobre nossa equipe, projetos ou serviços."
 
 BASE DE CONHECIMENTO CENTRALIZADA DO SQUAD G:
 ${JSON.stringify(KNOWLEDGE_DATA, null, 2)}
 `;
 
 /**
- * Motor Semântico Local de Resposta (Fallback Inteligente)
+ * Motor Semântico Local de Resposta (Fallback Inteligente e Objetivo)
  * Conectado diretamente à KNOWLEDGE_DATA centralizada.
- * Interpreta o significado e intenção da pergunta com suporte a sinônimos e perguntas amplas.
+ * Produz respostas curtas e naturais de 1 a 3 frases.
  */
 function getLocalFallbackResponse(userMessage, history) {
   const rawMsg = (userMessage || '').trim();
   const msg = rawMsg.toLowerCase();
 
-  // Histórico recente para contexto
-  let lastBotMsg = '';
-  if (Array.isArray(history) && history.length > 0) {
-    const botHistory = history.filter(h => h.sender === 'bot');
-    if (botHistory.length > 0) {
-      lastBotMsg = (botHistory[botHistory.length - 1].text || '').toLowerCase();
-    }
-  }
-
   // 1. Saudações
   const saudacoes = ['oi', 'olá', 'ola', 'bom dia', 'boa tarde', 'boa noite', 'e aí', 'e ai', 'oie', 'hello', 'hey'];
   if (saudacoes.some(s => msg === s || msg.startsWith(s + ' ') || msg.endsWith(' ' + s))) {
-    return 'Olá! Eu sou a **GIA**, assistente virtual oficial do **Squad G**. Posso ajudar você a conhecer nossa equipe, projetos, serviços, planos, habilidades e muito mais. O que você gostaria de saber?';
+    return 'Olá! Sou a **GIA**, assistente do Squad G. Como posso ajudar você hoje?';
   }
 
   // 2. Agradecimentos
   const agradecimentos = ['obrigado', 'obrigada', 'valeu', 'vlw', 'show', 'perfeito', 'otimo', 'ótimo', 'muito bom', 'valeu gia'];
   if (agradecimentos.some(a => msg === a || msg.includes(a))) {
-    return 'De nada! Fico feliz em ajudar. Se tiver mais alguma dúvida sobre o **Squad G**, é só me chamar!';
+    return 'Por nada! Se precisar de mais alguma informação sobre o Squad G, é só chamar.';
   }
 
   // 3. Identidade da GIA
@@ -91,11 +81,11 @@ function getLocalFallbackResponse(userMessage, history) {
     msg.includes('o que você é') ||
     msg.includes('qual o seu nome')
   ) {
-    return 'Eu sou a **GIA**, assistente virtual oficial do **Squad G**! Meu objetivo é ajudar você a conhecer tudo sobre nosso grupo, nossos integrantes, serviços, projetos, habilidades, case de sucesso e formas de contato.';
+    return 'Sou a **GIA**, assistente virtual oficial do Squad G. Posso te apresentar nossos integrantes, serviços, projetos, habilidades e formas de contato.';
   }
 
   // 4. Perguntas Amplas / Visão Geral do Squad G
-  // Ex: "Me fale mais sobre o Squad G", "O que é o Squad G?", "Quem são vocês?", "Fale sobre o projeto", etc.
+  // Ex: "Me fale mais sobre o Squad G", "O que é o Squad G?", "Quem são vocês?", etc.
   const isPerguntaGeral =
     msg.includes('fale mais sobre o squad') ||
     msg.includes('fale mais sobre a squad') ||
@@ -121,92 +111,36 @@ function getLocalFallbackResponse(userMessage, history) {
     (msg.includes('squad g') && (msg.includes('falar') || msg.includes('conte') || msg.includes('mais') || msg.includes('sobre') || msg.includes('historia') || msg.includes('história') || msg.length < 15));
 
   if (isPerguntaGeral) {
-    return 'O **Squad G** é uma equipe de desenvolvimento web formada por estudantes do 1º período de Análise e Desenvolvimento de Sistemas (ADS) da **Faculdade Imaculada Conceição do Recife (FICR)**, turma de 2025.\n\n' +
-      'Nosso objetivo é transformar ideias em soluções digitais reais, unindo design centrado no usuário, desenvolvimento moderno em HTML5/CSS3/JS e colaboração focada em resultados.\n\n' +
-      'O grupo é composto por 4 integrantes: **Amanda Gabrielly**, **Aylton Oliveira**, **Diógenes José** e **Guilherme Henrique**.\n\n' +
-      '💡 **Sobre o que você gostaria de saber mais agora?**\n' +
-      '• **Integrantes**: perfil, cargo e habilidades de cada membro;\n' +
-      '• **Serviços & Planos**: design UI/UX, front-end, branding e preços;\n' +
-      '• **Projetos**: telas e módulos desenvolvidos na prática;\n' +
-      '• **Case de Sucesso**: a solução financeira para a Alpha Corp;\n' +
-      '• **Contato**: e-mails e redes sociais da equipe.';
+    return 'O Squad G é uma equipe de estudantes de ADS da FICR que desenvolve soluções digitais e projetos práticos. No site você pode conhecer nossa equipe, projetos, serviços e habilidades. Quer conhecer os integrantes ou nossos projetos?';
   }
 
-  // 5. Integrantes Específicos
-  // Amanda
-  if (msg.includes('amanda') || ((msg.includes('ela') || msg.includes('dela')) && lastBotMsg.includes('amanda'))) {
-    const amanda = KNOWLEDGE_DATA.integrantes.find(i => i.id === 'amanda');
-    return `A **${amanda.nome}** tem ${amanda.idade} anos e é ${amanda.formacao}. Atua como **${amanda.cargo}**.\n\n` +
-      `• **Habilidades**: HTML (${amanda.habilidades.html}), CSS (${amanda.habilidades.css}) e JavaScript (${amanda.habilidades.js}).\n` +
-      `• **Projeto**: ${amanda.projeto}\n` +
-      `• **Contato**: ${amanda.email} e links de redes na página de Contato.`;
-  }
-
-  // Aylton
-  if (msg.includes('aylton') || ((msg.includes('ele') || msg.includes('dele')) && lastBotMsg.includes('aylton'))) {
-    const aylton = KNOWLEDGE_DATA.integrantes.find(i => i.id === 'aylton');
-    return `O **${aylton.nome}** tem ${aylton.idade} anos e é ${aylton.formacao}. Atua como **${aylton.cargo}**.\n\n` +
-      `• **Habilidades**: HTML (${aylton.habilidades.html}), CSS (${aylton.habilidades.css}) e JavaScript (${aylton.habilidades.js}).\n` +
-      `• **Projeto**: ${aylton.projeto}\n` +
-      `• **Contato**: ${aylton.email} e links de redes na página de Contato.`;
-  }
-
-  // Diógenes
-  if (msg.includes('diogenes') || msg.includes('diógenes') || ((msg.includes('ele') || msg.includes('dele')) && (lastBotMsg.includes('diogenes') || lastBotMsg.includes('diógenes')))) {
-    const diogenes = KNOWLEDGE_DATA.integrantes.find(i => i.id === 'diogenes');
-    return `O **${diogenes.nome}** tem ${diogenes.idade} anos e é ${diogenes.formacao}. Atua como **${diogenes.cargo}**.\n\n` +
-      `• **Habilidades**: HTML (${diogenes.habilidades.html}), CSS (${diogenes.habilidades.css}) e JavaScript (${diogenes.habilidades.js}).\n` +
-      `• **Projeto**: ${diogenes.projeto}\n` +
-      `• **Contato**: ${diogenes.email} e links de redes na página de Contato.`;
-  }
-
-  // Guilherme
-  if (msg.includes('guilherme') || ((msg.includes('ele') || msg.includes('dele')) && lastBotMsg.includes('guilherme'))) {
-    const guilherme = KNOWLEDGE_DATA.integrantes.find(i => i.id === 'guilherme');
-    return `O **${guilherme.nome}** tem ${guilherme.idade} anos e é ${guilherme.formacao}. Atua como **${guilherme.cargo}**.\n\n` +
-      `• **Habilidades**: HTML (${guilherme.habilidades.html}), CSS (${guilherme.habilidades.css}) e JavaScript (${guilherme.habilidades.js}).\n` +
-      `• **Projeto**: ${guilherme.projeto}\n` +
-      `• **Contato**: ${guilherme.email} e links de redes na página de Contato.`;
-  }
-
-  // 6. Integrantes em Geral / Quem faz parte da equipe
-  if (
-    msg.includes('integrante') ||
-    msg.includes('membro') ||
-    msg.includes('equipe') ||
-    msg.includes('quem faz parte') ||
-    msg.includes('quem sao os') ||
-    msg.includes('quem são os') ||
-    msg.includes('quantos sao') ||
-    msg.includes('quantas pessoas') ||
-    msg.includes('time')
-  ) {
-    return 'A equipe do **Squad G** é formada por 4 estudantes de ADS na FICR:\n\n' +
-      '• **Amanda Gabrielly** (25 anos) — Front-End & UI/UX Designer\n' +
-      '• **Aylton Oliveira** (20 anos) — Front-End & UI/UX Designer\n' +
-      '• **Diógenes José** (34 anos) — Front-End & UI/UX Designer\n' +
-      '• **Guilherme Henrique** (25 anos) — Front-End & UI/UX Designer\n\n' +
-      'Todos colaboram em design e desenvolvimento web. Você pode ver as fotos e detalhes na página **Sobre Nós** ou os projetos de cada um em **Projetos**!';
-  }
-
-  // 7. Planos e Preços
+  // 5. Preços e Planos (específicos)
   if (
     msg.includes('preço') ||
     msg.includes('preco') ||
     msg.includes('quanto custa') ||
     msg.includes('valor') ||
     msg.includes('valores') ||
-    msg.includes('plano') ||
     msg.includes('tabela')
   ) {
-    return 'Na página de **Serviços**, o Squad G oferece 3 opções de planos:\n\n' +
-      '• **Plano Básico (R$ 799)**: 1 página responsiva, entrega em 7 dias e suporte por 7 dias.\n' +
-      '• **Plano Pro (R$ 1.899)**: até 6 páginas, design + front-end completo, entrega em 12 dias e suporte por 30 dias.\n' +
-      '• **Plano Enterprise (R$ 4.800)**: projeto sob medida, entrega priorizada e suporte estendido.\n\n' +
-      'Gostaria de saber mais sobre os entregáveis de algum plano específico?';
+    if (msg.includes('pro')) {
+      return 'O **Plano Pro** custa **R$ 1.899** e inclui até 6 páginas com design e front-end completo, entrega em 12 dias e 30 dias de suporte.';
+    }
+    if (msg.includes('básico') || msg.includes('basico')) {
+      return 'O **Plano Básico** custa **R$ 799** e inclui 1 página responsiva, entrega em 7 dias e suporte por 7 dias.';
+    }
+    if (msg.includes('enterprise')) {
+      return 'O **Plano Enterprise** custa **R$ 4.800** e contempla projeto sob medida com entrega priorizada e suporte estendido.';
+    }
+    return 'Temos três planos: **Básico** (R$ 799), **Pro** (R$ 1.899) e **Enterprise** (R$ 4.800). Gostaria de ver os detalhes de algum deles?';
   }
 
-  // 8. Serviços Oferecidos
+  // 6. Planos (em geral)
+  if (msg.includes('plano') || msg.includes('planos')) {
+    return 'O Squad G oferece três planos de serviços: **Básico** (R$ 799), **Pro** (R$ 1.899) e **Enterprise** (R$ 4.800). Quer conhecer o que está incluso em algum deles?';
+  }
+
+  // 7. Serviços Oferecidos
   if (
     msg.includes('serviço') ||
     msg.includes('serviços') ||
@@ -220,14 +154,43 @@ function getLocalFallbackResponse(userMessage, history) {
     msg.includes('soluções') ||
     msg.includes('solucoes')
   ) {
-    return 'O **Squad G** atua em 3 frentes principais de serviços:\n\n' +
-      '1. **Design de UI/UX**: Wireframes, protótipos interativos no Figma e design responsivo com foco em usabilidade.\n' +
-      '2. **Desenvolvimento Front-end**: Landing pages, sites estáticos e interfaces modernas em HTML5, CSS3 e JavaScript, com código reutilizável e SEO básico.\n' +
-      '3. **Branding & Identidade**: Logotipos, paletas de cores e manuais visuais de marca.\n\n' +
-      'Também oferecemos os planos Básico (R$ 799), Pro (R$ 1.899) e Enterprise (R$ 4.800), detalhados na página de Serviços!';
+    return 'Oferecemos serviços de **UI/UX Design**, desenvolvimento **Front-end** e **Branding & Identidade**. Também temos três opções de planos: Básico, Pro e Enterprise.';
   }
 
-  // 9. Projetos Desenvolvidos
+  // 8. Integrantes Específicos
+  if (msg.includes('amanda')) {
+    const i = KNOWLEDGE_DATA.integrantes.find(m => m.id === 'amanda');
+    return `**${i.nome}** (25 anos) atua em **${i.cargo}**. Desenvolveu um projeto de telas de cadastro e login com foco em usabilidade. Contato: ${i.email}.`;
+  }
+  if (msg.includes('aylton')) {
+    const i = KNOWLEDGE_DATA.integrantes.find(m => m.id === 'aylton');
+    return `**${i.nome}** (20 anos) atua em **${i.cargo}**. Desenvolveu a réplica da página inicial do Google com alta precisão visual. Contato: ${i.email}.`;
+  }
+  if (msg.includes('diogenes') || msg.includes('diógenes')) {
+    const i = KNOWLEDGE_DATA.integrantes.find(m => m.id === 'diogenes');
+    return `**${i.nome}** (34 anos) atua em **${i.cargo}**. Desenvolveu módulos com foco em lógica de negócio, arquitetura web e integração. Contato: ${i.email}.`;
+  }
+  if (msg.includes('guilherme')) {
+    const i = KNOWLEDGE_DATA.integrantes.find(m => m.id === 'guilherme');
+    return `**${i.nome}** (25 anos) atua em **${i.cargo}**. Desenvolveu telas estruturadas de cadastro e login com validações. Contato: ${i.email}.`;
+  }
+
+  // 9. Integrantes em Geral
+  if (
+    msg.includes('integrante') ||
+    msg.includes('membro') ||
+    msg.includes('equipe') ||
+    msg.includes('quem faz parte') ||
+    msg.includes('quem sao os') ||
+    msg.includes('quem são os') ||
+    msg.includes('quantos sao') ||
+    msg.includes('quantas pessoas') ||
+    msg.includes('time')
+  ) {
+    return 'Nossa equipe é formada por 4 integrantes: **Amanda Gabrielly**, **Aylton Oliveira**, **Diógenes José** e **Guilherme Henrique**, todos estudantes de ADS na FICR. Gostaria de saber mais sobre algum deles?';
+  }
+
+  // 10. Projetos Desenvolvidos
   if (
     msg.includes('projeto') ||
     msg.includes('projetos') ||
@@ -239,15 +202,10 @@ function getLocalFallbackResponse(userMessage, history) {
     msg.includes('o que ja fizeram') ||
     msg.includes('quais projetos')
   ) {
-    return 'Na página de **Projetos**, você pode conferir os trabalhos práticos de cada integrante:\n\n' +
-      '• **Projeto Amanda**: Interface moderna de tela de cadastro e login com foco em usabilidade.\n' +
-      '• **Projeto Guilherme**: Telas de cadastro e login com design estruturado e validações.\n' +
-      '• **Projeto Aylton**: Reprodução da tela inicial do Google com alta precisão e fidelidade visual.\n' +
-      '• **Projeto Diógenes**: Módulos web e backend com foco em arquitetura, lógica de negócio e integração de APIs.\n\n' +
-      'Além disso, na Home temos o resumo dos projetos estratégicos da equipe com foco em desenvolvimento ágil e acessibilidade!';
+    return 'Desenvolvemos projetos individuais práticos (como telas de login e cadastro, módulos web e réplica do buscador Google) e projetos integrados da equipe. Deseja detalhes de um projeto específico?';
   }
 
-  // 10. Case de Sucesso / Alpha Corp
+  // 11. Case de Sucesso / Alpha Corp
   if (
     msg.includes('case') ||
     msg.includes('alpha') ||
@@ -255,14 +213,10 @@ function getLocalFallbackResponse(userMessage, history) {
     msg.includes('helena') ||
     msg.includes('fintech')
   ) {
-    return 'Nosso **Case de Sucesso** foi desenvolvido para a **Alpha Corp** (setor Fintech/Otimização Financeira).\n\n' +
-      '• **Desafio**: Processos legados lentos (conciliação bancária demorava 5 dias úteis) e alto custo de infraestrutura.\n' +
-      '• **Solução do Squad G**: Metodologia ágil Scrum, Dashboard em tempo real para fluxo de caixa e integração de APIs modernas com o ERP.\n' +
-      '• **Resultados**: 40% de redução de custos operacionais, 95% mais velocidade na conciliação e tempo de resposta de 0.2s na API.\n\n' +
-      'A CEO da Alpha Corp, Helena Barbosa, elogiou a robustez e o impacto da entrega!';
+    return 'Para a **Alpha Corp**, desenvolvemos um painel em tempo real integrado ao ERP, alcançando 40% de redução de custos operacionais e 95% mais agilidade na conciliação bancária.';
   }
 
-  // 11. Habilidades Técnicas / Tecnologias
+  // 12. Habilidades Técnicas / Tecnologias
   if (
     msg.includes('habilidade') ||
     msg.includes('habilidades') ||
@@ -276,34 +230,22 @@ function getLocalFallbackResponse(userMessage, history) {
     msg.includes('css') ||
     msg.includes('javascript')
   ) {
-    return 'Na página de **Habilidades**, apresentamos a proficiência técnica dos integrantes:\n\n' +
-      '• **HTML5**: Aylton (80%), Guilherme (80%), Amanda (60%), Diógenes (50%)\n' +
-      '• **CSS3**: Aylton (80%), Guilherme (80%), Diógenes (50%), Amanda (45%)\n' +
-      '• **JavaScript**: 10% para todos os integrantes no 1º período de ADS\n\n' +
-      'A equipe também domina ferramentas de prototipação no Figma, versionamento com Git/GitHub e práticas de acessibilidade e design responsivo.';
+    return 'A equipe domina **HTML5**, **CSS3**, **JavaScript**, além de prototipagem no **Figma** e versionamento com **Git**. Você pode conferir os percentuais detalhados na página de Habilidades.';
   }
 
-  // 12. Depoimentos de Clientes
+  // 13. Depoimentos de Clientes
   if (
     msg.includes('depoimento') ||
     msg.includes('depoimentos') ||
     msg.includes('avaliação') ||
     msg.includes('avaliacoes') ||
     msg.includes('feedback') ||
-    msg.includes('cliente') ||
-    msg.includes('davi') ||
-    msg.includes('carla') ||
-    msg.includes('gabriel') ||
-    msg.includes('luiza')
+    msg.includes('cliente')
   ) {
-    return 'Na página de **Depoimentos**, contamos com avaliações de clientes:\n\n' +
-      '• **Davi Ribeiro**: destacou que a interface é muito intuitiva e o impacto foi imediato.\n' +
-      '• **Carla Silva**: impressionada com o nível de detalhes e a qualidade da execução.\n' +
-      '• **Gabriel Santos**: elogiou a consistência visual forte e coesa em todas as páginas.\n' +
-      '• **Luiza Barbosa**: ressaltou o design limpo, moderno e a paleta agradável de cores.';
+    return 'Temos depoimentos de clientes como Davi Ribeiro, Carla Silva, Gabriel Santos e Luiza Barbosa elogiando a usabilidade, o design limpo e a consistência visual das nossas entregas.';
   }
 
-  // 13. Contato e Redes Sociais
+  // 14. Contato e Redes Sociais
   if (
     msg.includes('contato') ||
     msg.includes('email') ||
@@ -316,17 +258,10 @@ function getLocalFallbackResponse(userMessage, history) {
     msg.includes('telefone') ||
     msg.includes('onde posso falar')
   ) {
-    return 'Você pode entrar em contato com o Squad G de diversas formas:\n\n' +
-      '• **E-mails individuais**:\n' +
-      '  - amanda.squadg@ficr.edu.br\n' +
-      '  - aylton.squadg@ficr.edu.br\n' +
-      '  - diogenes.squadg@ficr.edu.br\n' +
-      '  - guilherme.squadg@ficr.edu.br\n' +
-      '• **Redes Sociais**: links para Instagram e LinkedIn na página de **Contato**.\n' +
-      '• **Formulário de Contato**: disponível na página inicial (**Home**), enviando mensagens diretamente para nossa equipe!';
+    return 'Você pode entrar em contato pelo formulário na página inicial ou pelos e-mails institucionais dos integrantes na página de Contato. Deseja o e-mail de algum membro?';
   }
 
-  // 14. Localização / Instituição / Faculdade
+  // 15. Localização / Instituição / Faculdade
   if (
     msg.includes('onde') ||
     msg.includes('faculdade') ||
@@ -337,25 +272,11 @@ function getLocalFallbackResponse(userMessage, history) {
     msg.includes('ads') ||
     msg.includes('universidade')
   ) {
-    return 'O **Squad G** é composto por estudantes do curso de Análise e Desenvolvimento de Sistemas (ADS) da **Faculdade Imaculada Conceição do Recife (FICR)**, localizada em Recife - PE, turma de 2025.';
+    return 'O Squad G é composto por alunos do 1º período de ADS da **Faculdade Imaculada Conceição do Recife (FICR)**, em Recife - PE.';
   }
 
-  // 15. Páginas do site
-  if (msg.includes('página') || msg.includes('paginas') || msg.includes('menu') || msg.includes('navegação') || msg.includes('site')) {
-    return 'O site do Squad G é estruturado em 8 páginas:\n\n' +
-      '1. **Home**: apresentação e formulário rápido de contato;\n' +
-      '2. **Sobre Nós**: história e os 4 integrantes;\n' +
-      '3. **Serviços**: soluções oferecidas e tabela de preços;\n' +
-      '4. **Projetos**: trabalhos práticos da equipe;\n' +
-      '5. **Habilidades**: proficiência técnica em HTML, CSS e JS;\n' +
-      '6. **Depoimentos**: avaliações de clientes;\n' +
-      '7. **Case de Sucesso**: resultados com a Alpha Corp;\n' +
-      '8. **Contato**: e-mails e redes sociais.';
-  }
-
-  // 16. Fallback amigável e natural caso o usuário pergunte algo não coberto
-  return 'Não encontrei informações específicas sobre isso no conteúdo oficial do nosso site. Mas posso te ajudar com tudo sobre o **Squad G**!\n\n' +
-    'Você gostaria de saber mais sobre nossos **integrantes**, **serviços e planos de preços**, **projetos desenvolvidos**, **habilidades técnicas**, **case de sucesso** ou **formas de contato**?';
+  // 16. Fallback objetivo
+  return 'Essa informação não consta no conteúdo oficial do Squad G. Posso te ajudar com dúvidas sobre nossa equipe, projetos, serviços ou formas de contato.';
 }
 
 // Endpoint seguro para o Chatbot

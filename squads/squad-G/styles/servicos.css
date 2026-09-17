@@ -1,101 +1,302 @@
 /* ==========================================================================
-   ESTILOS DA PÁGINA SERVIÇOS - SQUAD G
+   ESTILOS DA PÁGINA SERVIÇOS - SQUAD G (IDENTIDADE MONOCROMÁTICA TÉCNICA)
    ========================================================================== */
 
 main.servicos-main {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 60px 24px;
+}
+
+.servicos-header {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .servicos-titulo-principal {
   text-align: center;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 800;
-  color: #111827;
-  margin: 0 0 36px 0;
-  position: relative;
-  display: block;
+  color: var(--black);
+  margin: 0 0 10px 0;
+  letter-spacing: -0.035em;
 }
 
-.servicos-titulo-principal::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 4px;
-  background-color: #111827;
-  margin: 8px auto 0 auto;
-  border-radius: 2px;
+.servicos-subtitulo {
+  color: var(--gray-600);
+  font-size: 1.1rem;
+  margin: 0;
 }
 
 /* Grid dos Serviços Oferecidos */
 .servicos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-bottom: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-bottom: 70px;
 }
 
 .servico-card {
-  background-color: #ffffff;
-  border-radius: 14px;
-  padding: 30px 24px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e5e7eb;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 34px 28px;
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-subtle);
+  transition: var(--transition-normal);
   display: flex;
   flex-direction: column;
 }
 
 .servico-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.12);
+  border-color: var(--gray-400);
+  box-shadow: var(--shadow-md);
+}
+
+.servico-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.servico-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gray-400);
+  letter-spacing: -0.03em;
+}
+
+.servico-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray-700);
+  background-color: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  padding: 3px 10px;
+  border-radius: var(--radius-xs);
 }
 
 .servico-card h2 {
-  color: #111827;
-  font-size: 1.4rem;
+  color: var(--black);
+  font-size: 1.45rem;
   font-weight: 700;
   margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
 }
 
 .servico-card p {
-  color: #4b5563;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 0 0 16px 0;
+  color: var(--gray-600);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
 }
 
-.servico-card ul {
-  margin: 0;
-  padding-left: 20px;
-  color: #374151;
-  font-size: 0.95rem;
-  line-height: 1.7;
+.servico-features {
+  list-style: none;
+  margin: auto 0 0 0;
+  padding: 16px 0 0 0;
+  border-top: 1px solid var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.servico-features li {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.servico-features li::before {
+  content: "—";
+  color: var(--gray-400);
 }
 
 /* Seção Planos e Preços */
 .planos-secao {
-  background-color: #ffffff;
-  border-radius: 14px;
-  padding: 36px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e5e7eb;
+  background-color: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 48px 40px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-subtle);
 }
 
-.planos-secao h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1f2937;
+.planos-header {
   text-align: center;
-  margin: 0 0 28px 0;
+  margin-bottom: 40px;
 }
 
+.planos-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--black);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.03em;
+}
+
+.planos-subtitulo {
+  color: var(--gray-600);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* Grid de Cards de Planos Monocromáticos */
+.pricing-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.pricing-card {
+  background-color: var(--gray-50);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.pricing-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gray-400);
+  box-shadow: var(--shadow-sm);
+}
+
+.plan-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  background-color: var(--gray-200);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  margin-bottom: 12px;
+}
+
+.pricing-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--black);
+  margin: 0 0 10px 0;
+}
+
+.pricing-value {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.pricing-value .currency {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gray-600);
+}
+
+.pricing-value .amount {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--black);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.plan-desc {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.plan-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 16px 0 0 0;
+  border-top: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+/* Card Destacado - Plano Pro (Preto e Alto Contraste) */
+.pricing-card.card-featured {
+  background-color: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.pricing-card.card-featured:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.featured-ribbon {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--black);
+}
+
+.tag-inverted {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+}
+
+.pricing-card.card-featured .pricing-header h3 {
+  color: var(--white);
+}
+
+.pricing-card.card-featured .pricing-value .currency {
+  color: var(--gray-400);
+}
+
+.pricing-card.card-featured .pricing-value .amount {
+  color: var(--white);
+}
+
+.pricing-card.card-featured .plan-desc {
+  color: var(--gray-300);
+}
+
+.pricing-card.card-featured .plan-checklist {
+  border-top-color: var(--gray-800);
+  color: var(--gray-200);
+}
+
+/* Tabela Detalhada de Preços */
 .tabela-container {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
 }
 
 .tabela-precos {
@@ -108,30 +309,35 @@ main.servicos-main {
 .tabela-precos th,
 .tabela-precos td {
   padding: 16px 20px;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--gray-100);
 }
 
 .tabela-precos th {
-  background-color: #f9fafb;
-  color: #111827;
+  background-color: var(--gray-100);
+  color: var(--black);
   font-weight: 700;
-  font-size: 1rem;
-  border-top: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
 }
 
 .tabela-precos tr:hover td {
-  background-color: #f9fafb;
+  background-color: var(--gray-50);
+}
+
+.tabela-precos tr.tr-destaque td {
+  background-color: #fafbfc;
+  font-weight: 600;
 }
 
 .tabela-precos td:first-child {
   font-weight: 700;
-  color: #111827;
-  font-size: 1.05rem;
+  color: var(--black);
+  font-size: 1rem;
 }
 
 .preco-destaque {
   font-weight: 800;
-  color: #111827;
+  color: var(--black);
   font-size: 1.15rem;
   white-space: nowrap;
 }
@@ -139,16 +345,16 @@ main.servicos-main {
 .tabela-precos td ul {
   margin: 0;
   padding-left: 18px;
-  color: #4b5563;
+  color: var(--gray-600);
   line-height: 1.6;
 }
 
 /* Responsividade */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .planos-secao {
-    padding: 24px 16px;
+    padding: 30px 20px;
   }
-  .servicos-titulo-principal {
-    font-size: 2rem;
+  .pricing-card.card-featured {
+    transform: none;
   }
 }

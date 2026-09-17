@@ -1,116 +1,161 @@
 /* ==========================================================================
-   ESTILOS DA PÁGINA HABILIDADES - SQUAD G
+   ESTILOS DA PÁGINA HABILIDADES - SQUAD G (ESTÉTICA MONOCROMÁTICA TÉCNICA)
    ========================================================================== */
 
 main.habilidades-main {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 60px 24px;
+}
+
+.habilidades-topo-header {
   text-align: center;
+  margin-bottom: 36px;
+}
+
+.habilidades-topo-header h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--black);
+  margin: 0 0 10px 0;
+  letter-spacing: -0.035em;
+}
+
+.habilidades-topo-header p {
+  color: var(--gray-600);
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto;
 }
 
 .logo-habilidades {
-  margin-bottom: 36px;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: center;
 }
 
 .logo-habilidades img {
   display: block;
-  margin: 0 auto;
-  max-width: 280px;
+  max-width: 260px;
   width: 100%;
   height: auto;
   object-fit: contain;
+  opacity: 0.95;
+  filter: contrast(1.05);
 }
 
 /* Grid de Cards de Habilidade */
 .cards-habilidades {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  justify-content: center;
+  gap: 28px;
 }
 
 .card-habilidade {
-  background-color: #ffffff;
-  border-radius: 14px;
-  padding: 24px 20px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e5e7eb;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-subtle);
+  transition: var(--transition-normal);
   display: flex;
   flex-direction: column;
-  text-align: left;
 }
 
 .card-habilidade:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  border-color: var(--gray-400);
+  box-shadow: var(--shadow-md);
 }
 
-.card-habilidade img {
-  width: 100%;
-  height: 220px;
+.card-hab-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.card-hab-header img {
+  width: 90px;
+  height: 90px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-}
-
-.card-habilidade h3 {
-  font-size: 1.3rem;
-  color: #111827;
-  font-weight: 700;
-  margin: 0 0 4px 0;
-  text-align: center;
-}
-
-.card-habilidade h4 {
-  font-size: 0.95rem;
-  color: #374151;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin: 0 0 16px 0;
-  text-align: center;
-}
-
-/* Barras de Progresso */
-.skills {
+  border-radius: var(--radius-full);
+  border: 2px solid var(--gray-200);
   margin-bottom: 14px;
+}
+
+.hab-membro-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.hab-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  background-color: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.card-hab-header h3 {
+  font-size: 1.25rem;
+  color: var(--black);
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Barras de Progresso Monocromáticas */
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .skills-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   margin-bottom: 6px;
 }
 
 .skills-header span {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #374151;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gray-700);
 }
 
 .skills-header .skill-pct {
-  color: #111827;
+  color: var(--black);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-weight: 700;
+  font-size: 0.88rem;
 }
 
 .progress {
   width: 100%;
-  height: 9px;
-  background-color: #e5e7eb;
-  border-radius: 6px;
+  height: 8px;
+  background-color: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-full);
   overflow: hidden;
 }
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #374151 0%, #111827 100%);
-  border-radius: 6px;
-  transition: width 0.6s ease-in-out;
+  background-color: var(--black);
+  border-radius: var(--radius-full);
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Responsividade */

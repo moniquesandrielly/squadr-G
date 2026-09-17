@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ESTILOS DA PÁGINA CASE DE SUCESSO - SQUAD G (CSS NATIVO PURO)
+   ESTILOS DA PÁGINA CASE DE SUCESSO - SQUAD G (ESTÉTICA MONOCROMÁTICA TÉCNICA)
    ========================================================================== */
 
 main.case-main {
@@ -10,30 +10,46 @@ main.case-main {
 
 /* Hero do Case */
 .hero-case {
-  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
-  color: #ffffff;
-  padding: 60px 20px;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 70px 24px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid var(--gray-800);
 }
 
 .hero-case-content {
-  max-width: 900px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
+.case-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-300);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 20px;
+}
+
 .hero-case-content h1 {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   font-weight: 800;
+  color: var(--white);
   margin: 0 0 16px 0;
-  line-height: 1.25;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
 }
 
 .hero-case-content p {
-  font-size: 1.2rem;
-  font-weight: 300;
-  color: #e5e7eb;
-  margin: 0 0 20px 0;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--gray-300);
+  margin: 0 0 24px 0;
   line-height: 1.6;
 }
 
@@ -46,63 +62,92 @@ main.case-main {
 
 .tags span {
   display: inline-block;
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  font-size: 0.85rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--gray-200);
+  font-size: 12px;
   font-weight: 600;
   padding: 4px 12px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Seções do Case */
 .case-section {
-  max-width: 960px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 50px 20px;
+  padding: 60px 24px;
+}
+
+.case-section-header {
+  margin-bottom: 24px;
 }
 
 .case-section h2 {
   font-size: 2.2rem;
-  font-weight: 700;
-  color: #111827;
-  margin: 0 0 20px 0;
-  position: relative;
-  display: inline-block;
+  font-weight: 800;
+  color: var(--black);
+  margin: 0;
+  letter-spacing: -0.03em;
 }
 
-.case-section h2::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 4px;
-  background-color: #111827;
-  margin: 8px 0 0 0;
-  border-radius: 2px;
-}
-
-.case-section p {
-  color: #374151;
+.case-lead-p {
+  color: var(--gray-600);
   font-size: 1.1rem;
   line-height: 1.7;
-  margin: 0 0 16px 0;
+  max-width: 820px;
+  margin: 0 0 32px 0;
 }
 
-/* Lista de Desafios */
-.lista-desafios {
-  list-style: disc;
-  margin: 20px 0 0 24px;
-  padding: 0;
-  color: #374151;
-  font-size: 1.05rem;
-  line-height: 1.8;
+/* Grid de Desafios */
+.desafios-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.desafio-item {
+  background-color: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-normal);
+}
+
+.desafio-item:hover {
+  border-color: var(--gray-400);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.desafio-idx {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gray-400);
+  display: block;
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+
+.desafio-item h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--black);
+  margin: 0 0 8px 0;
+}
+
+.desafio-item p {
+  font-size: 0.94rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Grid de Soluções */
 .solucoes-wrapper {
-  background-color: #f8fafc;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
+  background-color: var(--gray-50);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .solution-grid {
@@ -113,29 +158,44 @@ main.case-main {
 }
 
 .solution-item {
-  background-color: #ffffff;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e5e7eb;
-  border-top: 4px solid #111827;
-  transition: transform 0.2s ease;
+  background-color: var(--white);
+  padding: 28px 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-subtle);
+  transition: var(--transition-normal);
 }
 
 .solution-item:hover {
   transform: translateY(-3px);
+  border-color: var(--gray-400);
+  box-shadow: var(--shadow-sm);
+}
+
+.sol-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  background-color: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  display: inline-block;
+  margin-bottom: 12px;
 }
 
 .solution-item h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--black);
   margin: 0 0 10px 0;
 }
 
 .solution-item p {
-  color: #4b5563;
-  font-size: 0.95rem;
+  color: var(--gray-600);
+  font-size: 0.94rem;
   margin: 0;
   line-height: 1.6;
 }
@@ -143,36 +203,43 @@ main.case-main {
 /* Grid de Métricas / Resultados */
 .metrics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
-  margin: 36px 0;
-  text-align: center;
+  margin: 32px 0 44px 0;
 }
 
 .metric-box {
-  background-color: #ffffff;
-  padding: 28px 20px;
-  border-radius: 14px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e5e7eb;
-  border-bottom: 6px solid #111827;
+  background-color: var(--white);
+  padding: 32px 20px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-subtle);
+  text-align: center;
+  transition: var(--transition-normal);
+}
+
+.metric-box:hover {
+  border-color: var(--gray-400);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
 .metric-number {
   display: block;
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 800;
-  color: #111827;
+  color: var(--black);
   line-height: 1;
-  margin-bottom: 8px;
+  letter-spacing: -0.04em;
+  margin-bottom: 10px;
 }
 
 .metric-label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #4b5563;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gray-600);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.04em;
   margin: 0;
 }
 
@@ -180,28 +247,27 @@ main.case-main {
 .testimonial-container {
   display: flex;
   align-items: center;
-  gap: 20px;
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  padding: 28px;
-  border-radius: 14px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
-  margin-top: 40px;
+  gap: 24px;
+  background-color: var(--white);
+  border: 1px solid var(--border-subtle);
+  padding: 32px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xs);
 }
 
 .client-foto {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-full);
   object-fit: cover;
   flex-shrink: 0;
-  border: 3px solid #111827;
+  border: 2px solid var(--black);
 }
 
 .testimonial-text p {
   font-style: italic;
-  font-size: 1.05rem;
-  color: #1f2937;
+  font-size: 1.1rem;
+  color: var(--gray-800);
   margin: 0 0 8px 0;
   line-height: 1.6;
 }
@@ -209,7 +275,7 @@ main.case-main {
 .testimonial-text cite {
   font-style: normal;
   font-weight: 700;
-  color: #111827;
+  color: var(--black);
   display: block;
   font-size: 0.95rem;
 }
@@ -217,19 +283,13 @@ main.case-main {
 /* Responsividade */
 @media (max-width: 768px) {
   .hero-case-content h1 {
-    font-size: 1.9rem;
-  }
-  .hero-case-content p {
-    font-size: 1.05rem;
+    font-size: 2rem;
   }
   .case-section h2 {
     font-size: 1.8rem;
   }
   .testimonial-container {
     flex-direction: column;
-    text-align: center;
-  }
-  .testimonial-text cite {
     text-align: center;
   }
 }

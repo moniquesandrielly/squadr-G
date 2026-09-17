@@ -44,44 +44,121 @@
 
   <!-- CONTEÚDO PRINCIPAL -->
   <main id="conteudo-principal" class="servicos-main">
-    <h1 class="servicos-titulo-principal">Nossos Serviços</h1>
+    <div class="servicos-header">
+      <span class="section-badge-mono">Atuação & Entregas</span>
+      <h1 class="servicos-titulo-principal">Nossos Serviços</h1>
+      <p class="servicos-subtitulo">Soluções digitais completas desenvolvidas com precisão técnica e foco em usabilidade.</p>
+    </div>
 
     <!-- GRID DE SERVIÇOS -->
     <section class="servicos-grid" aria-label="Lista de Serviços">
 
       <article class="servico-card">
+        <div class="servico-card-top">
+          <span class="servico-num">01</span>
+          <span class="servico-tag">Experiência</span>
+        </div>
         <h2>Design de UI/UX</h2>
-        <p>Wireframes, protótipos e design responsivo focado na melhor usabilidade.</p>
-        <ul>
-          <li>Protótipos em Figma</li>
-          <li>Design responsivo</li>
+        <p>Wireframes, protótipos e design responsivo focado na melhor usabilidade e clareza para seus usuários.</p>
+        <ul class="servico-features">
+          <li>Protótipos em Figma interativos</li>
+          <li>Design 100% responsivo e acessível</li>
         </ul>
       </article>
 
       <article class="servico-card">
+        <div class="servico-card-top">
+          <span class="servico-num">02</span>
+          <span class="servico-tag">Engenharia Web</span>
+        </div>
         <h2>Desenvolvimento Front-end</h2>
-        <p>Landing pages, sites estáticos e interfaces modernas em HTML/CSS/JS.</p>
-        <ul>
-          <li>Componentes reutilizáveis</li>
-          <li>SEO básico</li>
+        <p>Landing pages, sites estáticos e interfaces modernas desenvolvidas em HTML5, CSS3 e JavaScript limpo.</p>
+        <ul class="servico-features">
+          <li>Componentes reutilizáveis e modulares</li>
+          <li>SEO básico e otimização de performance</li>
         </ul>
       </article>
 
       <article class="servico-card">
+        <div class="servico-card-top">
+          <span class="servico-num">03</span>
+          <span class="servico-tag">Identidade</span>
+        </div>
         <h2>Branding & Identidade</h2>
-        <p>Logotipos, paletas de cores e guias visuais completos de estilo.</p>
-        <ul>
-          <li>Manual básico da marca</li>
-          <li>Fichas de aplicação</li>
+        <p>Logotipos, paletas de cores equilibradas e guias visuais completos para posicionar sua marca.</p>
+        <ul class="servico-features">
+          <li>Manual básico da marca e tipografia</li>
+          <li>Fichas de aplicação para redes e web</li>
         </ul>
       </article>
 
     </section>
 
-    <!-- SEÇÃO PLANOS E PREÇOS -->
+    <!-- SEÇÃO PLANOS E PREÇOS COM CARDS DE DESTAQUE -->
     <section class="planos-secao" aria-labelledby="heading-planos">
-      <h2 id="heading-planos">Planos e Preços</h2>
+      <div class="planos-header">
+        <span class="section-badge-mono">Transparência & Investimento</span>
+        <h2 id="heading-planos">Planos e Preços</h2>
+        <p class="planos-subtitulo">Estruturas de contratação claras e proporcionais ao escopo do seu projeto.</p>
+      </div>
 
+      <!-- CARDS DE PREÇOS MONOCROMÁTICOS MODERNOS -->
+      <div class="pricing-cards-grid">
+        <article class="pricing-card">
+          <div class="pricing-header">
+            <span class="plan-tag">Essencial</span>
+            <h3>Básico</h3>
+            <div class="pricing-value">
+              <span class="currency">R$</span>
+              <span class="amount">799</span>
+            </div>
+            <p class="plan-desc">Ideal para landing pages e presenças institucionais ágeis.</p>
+          </div>
+          <ul class="plan-checklist">
+            <li>✓ 1 página responsiva</li>
+            <li>✓ Entrega em 7 dias</li>
+            <li>✓ Suporte por 7 dias</li>
+          </ul>
+        </article>
+
+        <article class="pricing-card card-featured">
+          <div class="featured-ribbon">Mais Procurado</div>
+          <div class="pricing-header">
+            <span class="plan-tag tag-inverted">Profissional</span>
+            <h3>Pro</h3>
+            <div class="pricing-value">
+              <span class="currency">R$</span>
+              <span class="amount">1.899</span>
+            </div>
+            <p class="plan-desc">Pacote completo com design de UI/UX e desenvolvimento front-end.</p>
+          </div>
+          <ul class="plan-checklist">
+            <li>✓ Até 6 páginas completas</li>
+            <li>✓ Design + Front-end integrado</li>
+            <li>✓ Entrega em 12 dias</li>
+            <li>✓ Suporte estendido por 30 dias</li>
+          </ul>
+        </article>
+
+        <article class="pricing-card">
+          <div class="pricing-header">
+            <span class="plan-tag">Personalizado</span>
+            <h3>Enterprise</h3>
+            <div class="pricing-value">
+              <span class="currency">R$</span>
+              <span class="amount">4.800</span>
+            </div>
+            <p class="plan-desc">Para iniciativas que exigem arquitetura exclusiva e prazos ágeis.</p>
+          </div>
+          <ul class="plan-checklist">
+            <li>✓ Projeto sob medida</li>
+            <li>✓ Entrega priorizada</li>
+            <li>✓ Suporte estendido dedicado</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- TABELA DETALHADA PARA COMPARAÇÃO -->
       <div class="tabela-container">
         <table class="tabela-precos">
           <thead>
@@ -104,8 +181,8 @@
               </td>
             </tr>
 
-            <tr>
-              <td>Pro</td>
+            <tr class="tr-destaque">
+              <td>Pro <em>(Recomendado)</em></td>
               <td class="preco-destaque">R$ 1.899</td>
               <td>
                 <ul>

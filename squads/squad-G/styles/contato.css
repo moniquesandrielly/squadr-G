@@ -1,12 +1,32 @@
 /* ==========================================================================
-   ESTILOS DA PÁGINA CONTATO - SQUAD G
+   ESTILOS DA PÁGINA CONTATO - SQUAD G (ESTÉTICA MONOCROMÁTICA TÉCNICA)
    ========================================================================== */
 
 main.contato-main {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 60px 24px;
+}
+
+.contato-page-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.contato-page-header h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--black);
+  margin: 0 0 10px 0;
+  letter-spacing: -0.035em;
+}
+
+.contato-page-header p {
+  color: var(--gray-600);
+  font-size: 1.1rem;
+  max-width: 620px;
+  margin: 0 auto;
 }
 
 .contato-layout {
@@ -18,54 +38,86 @@ main.contato-main {
 
 /* Painel Lateral / Apresentação */
 .titulo-contatos {
-  background-color: #ffffff;
-  border-radius: 14px;
-  padding: 36px 24px;
+  background-color: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 36px 28px;
   text-align: center;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e5e7eb;
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-subtle);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .titulo-contatos img {
-  max-width: 220px;
+  max-width: 200px;
   width: 100%;
   height: auto;
   margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+.titulo-contatos h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--black);
+  margin: 0 0 10px 0;
+  letter-spacing: -0.02em;
 }
 
 .titulo-contatos p {
-  color: #4b5563;
-  font-size: 1.05rem;
+  color: var(--gray-600);
+  font-size: 0.95rem;
   line-height: 1.6;
-  margin: 0 0 16px 0;
+  margin: 0 0 24px 0;
 }
 
 .contato-info-extra {
   font-size: 0.9rem;
-  color: #6b7280;
-  border-top: 1px solid #e5e7eb;
-  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  padding-top: 20px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.info-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-500);
+}
+
+.info-row strong {
+  font-size: 0.92rem;
+  color: var(--black);
+  font-weight: 600;
 }
 
 /* Grid de Contato dos Integrantes */
 .integrantes-contato-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
 }
 
 .card-contato-membro {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 24px 20px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
   text-align: center;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e5e7eb;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-subtle);
+  transition: var(--transition-normal);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,68 +125,78 @@ main.contato-main {
 
 .card-contato-membro:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.12);
+  border-color: var(--gray-400);
+  box-shadow: var(--shadow-md);
 }
 
 .card-contato-membro .avatar-foto {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-full);
   object-fit: cover;
-  border: 3px solid #111827;
+  border: 2px solid var(--black);
   margin-bottom: 14px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-xs);
 }
 
 .card-contato-membro h2 {
   font-size: 1.25rem;
-  color: #111827;
+  color: var(--black);
   font-weight: 700;
   margin: 0 0 4px 0;
+  letter-spacing: -0.01em;
 }
 
 .card-contato-membro .cargo-tag {
-  font-size: 0.85rem;
-  color: #4b5563;
+  font-size: 0.82rem;
+  color: var(--gray-600);
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
-/* Ícones de Redes Sociais */
+/* Ícones de Redes Sociais Monocromáticos */
 .contato-icones {
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
   align-items: center;
+  width: 100%;
+  padding-top: 14px;
+  border-top: 1px solid var(--gray-100);
 }
 
 .contato-icones a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #f3f4f6;
-  border: 1px solid #e5e7eb;
-  transition: all 0.2s ease;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background-color: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  transition: var(--transition-fast);
 }
 
 .contato-icones a:hover {
-  background-color: #e5e7eb;
-  border-color: #111827;
-  transform: scale(1.1);
+  background-color: var(--black);
+  border-color: var(--black);
+  transform: translateY(-2px);
 }
 
 .contato-icones a:focus-visible {
-  outline: 2px solid #111827;
+  outline: 2px solid var(--black);
   outline-offset: 2px;
 }
 
 .contato-icones img {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
+  transition: filter 0.2s ease;
+}
+
+.contato-icones a:hover img {
+  filter: brightness(0) invert(1);
 }
 
 /* Responsividade */
@@ -143,6 +205,6 @@ main.contato-main {
     grid-template-columns: 1fr;
   }
   .titulo-contatos {
-    padding: 24px 18px;
+    padding: 28px 20px;
   }
 }
