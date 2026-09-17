@@ -1,127 +1,148 @@
-/* Estilos base - personalize para seu squad */
+/* ==========================================================================
+   ESTILOS DA PÁGINA CONTATO - SQUAD G
+   ========================================================================== */
 
-
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               'Segoe UI', sans-serif;
-  background-color: rgb(210, 208, 208);          
-  }
-  ul, li, a {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  gap: 10px;
-  margin-bottom: 15px;
-  text-decoration: none;
-  color: black;
-}
-.footer {
-    background-color: #343a40;
-    color: #bbb;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
-    margin-top: 40px;
-}
-.logo{
-  width: 15px;
-  height: 20px;
-  margin-bottom: 10px;
-
-}
-header{
-  background-color: rgb(210, 208, 208);
-  padding: 10px 40px;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-}
-.logo img{
-  width: 130px;
-}
-.menu-container{
- display: flex;
- gap: 20px;
- align-items: center;
-}
-#menu-principal ul{
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-#menu-principal a{
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  transition: 0.3s;
-}
-#menu-principal a:hover {
-    text-decoration:colo#0077cc;
-}
-.principal_container{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
+main.contato-main {
+  width: 100%;
   max-width: 1200px;
-  margin: 50px auto; 
-  padding: 0 20px;
-}
-  
-.titulo-contatos {
-    flex: 0 0 40%; 
-    text-align: center;
-    padding-top: 50px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: var(--sombra-card);
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.titulo-contatos img{
-    max-width: 80%;
-    height: auto;
-    margin-bottom: 20px;
-}
-.integrantes{
-  flex: 0 0 60%; 
-  display: flex;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-.fotos {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: var(--sombra-card);
-    transition: transform 0.3s;
-    flex-direction: column;
-}
-.fotos .contato-icones {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-.fotos .contato-icones img {
-    width: 30px; 
-    height: 30px;
-    transition: transform 0.2s;
+.contato-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 32px;
+  align-items: start;
 }
-.fotos img:not(.contato-icones img) { 
-    width: 120px; 
-    height: 120px; 
-    border-radius: 50%;
-    margin-bottom: 15px;
-    object-fit: cover;
+
+/* Painel Lateral / Apresentação */
+.titulo-contatos {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 36px 24px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo-contatos img {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.titulo-contatos p {
+  color: #4b5563;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.contato-info-extra {
+  font-size: 0.9rem;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+  width: 100%;
+}
+
+/* Grid de Contato dos Integrantes */
+.integrantes-contato-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.card-contato-membro {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-contato-membro:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.12);
+}
+
+.card-contato-membro .avatar-foto {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #111827;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.card-contato-membro h2 {
+  font-size: 1.25rem;
+  color: #111827;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.card-contato-membro .cargo-tag {
+  font-size: 0.85rem;
+  color: #4b5563;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Ícones de Redes Sociais */
+.contato-icones {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  align-items: center;
+}
+
+.contato-icones a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.contato-icones a:hover {
+  background-color: #e5e7eb;
+  border-color: #111827;
+  transform: scale(1.1);
+}
+
+.contato-icones a:focus-visible {
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+}
+
+.contato-icones img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* Responsividade */
+@media (max-width: 860px) {
+  .contato-layout {
+    grid-template-columns: 1fr;
+  }
+  .titulo-contatos {
+    padding: 24px 18px;
+  }
 }

@@ -1,73 +1,131 @@
-<!-- Home - Squad G -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="home.css">
+  <meta name="description" content="Portfólio oficial do Squad G - Equipe de Desenvolvimento Web e Soluções Digitais da FICR (2025).">
+  <meta property="og:title" content="Squad G • Portfólio Oficial">
+  <meta property="og:description" content="Portfólio oficial do Squad G - Equipe de Desenvolvimento Web e Soluções Digitais da FICR (2025).">
   <title>Squad G • Portfólio</title>
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/chatbot.css">
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/chatbot.js" defer></script>
 </head>
-
 <body>
 
-  <!-- MENU NO TOPO -->
-  <header id="topo" class="header">
+  <!-- Link de Acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- CABEÇALHO PADRONIZADO -->
+  <header id="topo" class="site-header">
+    <a href="home.html" class="header-brand" aria-label="Squad G - Página Inicial">
+      <img src="styles/img/logo squadG.png" alt="Logo do Squad G">
+    </a>
+
+    <button id="btn-menu-toggle" class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-principal">
+      <span class="hamburger-icon"></span>
+    </button>
+
     <div class="menu-container">
-      <nav id="menu-principal" class="nav">
+      <nav id="menu-principal" class="nav-menu" aria-label="Navegação Principal">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contato">Contato</a></li>
-          <li><a href="#curriculo">Currículo</a></li>
-          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="habilidades.html">Habilidades</a></li>
+          <li><a href="depoimentos.html">Depoimentos</a></li>
+          <li><a href="case-de-sucesso.html">Case de Sucesso</a></li>
+          <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
     </div>
-
-    <!-- HOME / HERO -->
-    <div class="hero">
-      <h1 id="titulo-principal">
-        <a href="#">Squad G</a>
-      </h1>
-      <p>Excelência e soluções profissionais.</p>
-    </div>
   </header>
 
-  <!-- PROJETOS -->
-  <section id="projetos" class="projetos">
-    <h2>Projetos</h2>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="conteudo-principal">
 
-    <article class="projeto">
-      <h3>Projeto Principal</h3>
-      <p>Entrega estratégica realizada pelo Squad G.</p>
-    </article>
+    <!-- HOME / HERO SECTION -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <h1 id="titulo-principal">Squad G</h1>
+        <p>Excelência e soluções profissionais.</p>
+        <div class="hero-actions">
+          <a href="projetos.html" class="btn-primary">Ver Projetos</a>
+          <a href="sobre.html" class="btn-secondary">Conheça a Equipe</a>
+        </div>
+      </div>
+    </section>
 
-    <article class="projeto">
-      <h3>Projeto Secundário</h3>
-      <p>Iniciativa complementar desenvolvida com precisão.</p>
-    </article>
-  </section>
+    <div class="home-container">
+      <!-- SEÇÃO PROJETOS -->
+      <section id="projetos" class="secao-projetos" aria-labelledby="heading-projetos">
+        <div class="section-heading">
+          <h2 id="heading-projetos">Projetos</h2>
+          <p>Conheça os projetos desenvolvidos pelos integrantes da equipe.</p>
+        </div>
 
-  <!-- CONTATO -->
-  <section id="contato" class="contato">
-    <h2>Contato</h2>
+        <div class="projetos-grid">
+          <article class="projeto-card">
+            <div>
+              <h3>Projeto Principal</h3>
+              <p>Entrega estratégica realizada pelo Squad G com foco em modernidade, usabilidade e desenvolvimento ágil.</p>
+            </div>
+            <a href="projetos.html">Acessar detalhes &rarr;</a>
+          </article>
 
-    <form id="form-contato" class="form-contato">
-      <label for="nome">Nome</label>
-      <input id="nome" type="text" required>
+          <article class="projeto-card">
+            <div>
+              <h3>Projeto Secundário</h3>
+              <p>Iniciativa complementar desenvolvida com precisão e foco em acessibilidade e responsividade digital.</p>
+            </div>
+            <a href="projetos.html">Acessar detalhes &rarr;</a>
+          </article>
+        </div>
+      </section>
 
-      <label for="email">E-mail</label>
-      <input id="email" type="email" required>
+      <!-- SEÇÃO CONTATO RÁPIDO -->
+      <section id="contato" class="secao-contato" aria-labelledby="heading-contato">
+        <div class="section-heading">
+          <h2 id="heading-contato">Contato</h2>
+          <p>Envie sua mensagem diretamente para o Squad G.</p>
+        </div>
 
-      <label for="mensagem">Mensagem</label>
-      <textarea id="mensagem" rows="3" required></textarea>
+        <div class="contato-wrapper">
+          <form id="form-contato" class="form-contato" onsubmit="event.preventDefault(); document.getElementById('feedback-envio').style.display = 'block'; this.reset();">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required>
+            </div>
 
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" required>
+            </div>
 
-  <footer id="rodape" class="footer">
-    <p>&copy; 2025 Squad G</p>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem aqui..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar Mensagem</button>
+
+            <div id="feedback-envio" class="form-feedback" role="alert">
+              Obrigado pelo contato! Sua mensagem foi registrada com sucesso.
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- RODAPÉ PADRONIZADO -->
+  <footer id="rodape" class="site-footer">
+    <p>&copy; 2025 <strong>Squad G</strong> • Faculdade Imaculada Conceição do Recife (FICR)</p>
+    <p>Projeto Acadêmico de Desenvolvimento Web - 1º Período de ADS</p>
   </footer>
 
 </body>

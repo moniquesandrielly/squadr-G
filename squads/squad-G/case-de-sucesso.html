@@ -1,99 +1,127 @@
-<!-- Case de Sucesso - Squad G -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Case de Sucesso - Projeto Alpha-Squad G</title>
-   <link rel="stylesheet" href="case-de-sucesso.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case de Sucesso: Otimização Digital e Financeira desenvolvida pelo Squad G para a Alpha Corp.">
+  <title>Case de Sucesso - Alpha Corp • Squad G</title>
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/case-de-sucesso.css">
+  <link rel="stylesheet" href="styles/chatbot.css">
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/chatbot.js" defer></script>
 </head>
+
 <body>
-  <header id="topo" class="header">
+  <!-- Link de Acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- CABEÇALHO PADRONIZADO -->
+  <header id="topo" class="site-header">
+    <a href="home.html" class="header-brand" aria-label="Squad G - Página Inicial">
+      <img src="styles/img/logo squadG.png" alt="Logo do Squad G">
+    </a>
+
+    <button id="btn-menu-toggle" class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-principal">
+      <span class="hamburger-icon"></span>
+    </button>
+
     <div class="menu-container">
-      <nav id="menu-principal" class="nav">
+      <nav id="menu-principal" class="nav-menu" aria-label="Navegação Principal">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Projetos</a></li>
-          <li><a href="#">Contato</a></li>
-          <li><a href="#">Currículo</a></li>
-          <li><a href="#">Sobre</a></li>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="habilidades.html">Habilidades</a></li>
+          <li><a href="depoimentos.html">Depoimentos</a></li>
+          <li><a href="case-de-sucesso.html">Case de Sucesso</a></li>
+          <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="conteudo-principal" class="case-main">
+
+    <!-- HERO DO CASE -->
     <section class="hero-case">
-      <div class="hero-content">
+      <div class="hero-case-content">
         <h1>Case de Sucesso: Otimização Financeira da Alpha Corp</h1>
         <p>Entregamos uma solução de software que resultou em 40% de redução de custos operacionais.</p>
         <div class="tags">
-            <span>#Fintech</span>
-            <span>#Otimização</span>
-            <span>#SquadG</span>
+          <span>#Fintech</span>
+          <span>#Otimização</span>
+          <span>#SquadG</span>
         </div>
       </div>
     </section>
 
-
-    <section id="desafio" class="case-section">
-        <h2>O Desafio</h2>
-        <p>A Alpha Corp enfrentava processos legados lentos e caros, resultando em gargalos na gestão de fluxo de caixa e relatórios financeiros. Eles precisavam de uma solução ágil e segura que pudesse se integrar ao sistema ERP existente.</p>
-        <ul class="list-disc ml-8 mt-4 space-y-2">
-            <li>Lentidão na conciliação bancária (demora de 5 dias úteis).</li>
-            <li>Alto custo com manutenção de infraestrutura antiga.</li>
-            <li>Falta de visibilidade em tempo real sobre as métricas chave.</li>
-        </ul>
+    <!-- O DESAFIO -->
+    <section id="desafio" class="case-section" aria-labelledby="heading-desafio">
+      <h2 id="heading-desafio">O Desafio</h2>
+      <p>A Alpha Corp enfrentava processos legados lentos e caros, resultando em gargalos na gestão de fluxo de caixa e relatórios financeiros. Eles precisavam de uma solução ágil e segura que pudesse se integrar ao sistema ERP existente.</p>
+      <ul class="lista-desafios">
+        <li>Lentidão na conciliação bancária (demora de 5 dias úteis).</li>
+        <li>Alto custo com manutenção de infraestrutura antiga.</li>
+        <li>Falta de visibilidade em tempo real sobre as métricas chave.</li>
+      </ul>
     </section>
 
-
-    <section id="solucao" class="case-section bg-indigo-50">
-        <h2>Nossa Solução</h2>
+    <!-- NOSSA SOLUÇÃO -->
+    <div class="solucoes-wrapper">
+      <section id="solucao" class="case-section" aria-labelledby="heading-solucao">
+        <h2 id="heading-solucao">Nossa Solução</h2>
         <div class="solution-grid">
-            <article class="solution-item">
-                <h3>Desenvolvimento Ágil</h3>
-                <p>Implementamos a metodologia Scrum para garantir entregas incrementais e feedback constante.</p>
-            </article>
-            <article class="solution-item">
-                <h3>Plataforma Customizada</h3>
-                <p>Criamos um painel de controle centralizado (Dashboard) para monitoramento em tempo real do fluxo de caixa.</p>
-            </article>
-            <article class="solution-item">
-                <h3>Integração Segura</h3>
-                <p>Utilizamos APIs modernas para uma integração segura e bidirecional com o ERP da Alpha Corp.</p>
-            </article>
+          <article class="solution-item">
+            <h3>Desenvolvimento Ágil</h3>
+            <p>Implementamos a metodologia Scrum para garantir entregas incrementais e feedback constante.</p>
+          </article>
+          <article class="solution-item">
+            <h3>Plataforma Customizada</h3>
+            <p>Criamos um painel de controle centralizado (Dashboard) para monitoramento em tempo real do fluxo de caixa.</p>
+          </article>
+          <article class="solution-item">
+            <h3>Integração Segura</h3>
+            <p>Utilizamos APIs modernas para uma integração segura e bidirecional com o ERP da Alpha Corp.</p>
+          </article>
         </div>
-    </section>
+      </section>
+    </div>
 
-   
-    <section id="resultados" class="case-section">
-        <h2>Resultados Alcançados</h2>
-        <div class="metrics-grid">
-            <div class="metric-box">
-                <span class="metric-number">40%</span>
-                <p class="metric-label">Redução de Custos Operacionais</p>
-            </div>
-            <div class="metric-box">
-                <span class="metric-number">95%</span>
-                <p class="metric-label">Aumento na Velocidade da Conciliação</p>
-            </div>
-            <div class="metric-box">
-                <span class="metric-number">0.2s</span>
-                <p class="metric-label">Tempo de Resposta Médio da API</p>
-            </div>
+    <!-- RESULTADOS ALCANÇADOS -->
+    <section id="resultados" class="case-section" aria-labelledby="heading-resultados">
+      <h2 id="heading-resultados">Resultados Alcançados</h2>
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <span class="metric-number">40%</span>
+          <p class="metric-label">Redução de Custos Operacionais</p>
         </div>
+        <div class="metric-box">
+          <span class="metric-number">95%</span>
+          <p class="metric-label">Aumento na Velocidade da Conciliação</p>
+        </div>
+        <div class="metric-box">
+          <span class="metric-number">0.2s</span>
+          <p class="metric-label">Tempo de Resposta Médio da API</p>
+        </div>
+      </div>
 
-        <div class="testimonial-container mt-12">
-            <img class="client-foto" src="https://placehold.co/80x80/6366f1/ffffff?text=CEO" alt="Foto do CEO">
-            <div class="testimonial-text">
-                <p>"O Squad G não apenas atendeu às nossas expectativas, mas as superou. A solução é robusta e mudou a forma como gerenciamos nossas finanças."</p>
-                <cite>- Helena Barbosa, CEO da Alpha Corp</cite>
-            </div>
+      <div class="testimonial-container">
+        <img class="client-foto" src="styles/img/usuario2.png" alt="Foto da CEO Helena Barbosa">
+        <div class="testimonial-text">
+          <p>"O Squad G não apenas atendeu às nossas expectativas, mas as superou. A solução é robusta e mudou a forma como gerenciamos nossas finanças."</p>
+          <cite>- Helena Barbosa, CEO da Alpha Corp</cite>
         </div>
+      </div>
     </section>
   </main>
 
-  <footer id="rodape" class="footer">
-    <p>&copy; 2025 Squad G</p>
+  <!-- RODAPÉ PADRONIZADO -->
+  <footer id="rodape" class="site-footer">
+    <p>Desenvolvido pelo Grupo de Estudantes (<strong>SQUAD G</strong>)</p>
+    <p>Faculdade Imaculada Conceição do Recife - 2025.</p>
   </footer>
 
 </body>

@@ -1,88 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="projetos.css">
-    <title>Projetos - Squad G</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projetos desenvolvidos pelos integrantes do Squad G - Telas de login, cadastro e interfaces web.">
+  <title>Projetos - Squad G</title>
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/projetos.css">
+  <link rel="stylesheet" href="styles/chatbot.css">
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/chatbot.js" defer></script>
 </head>
 <body>
 
-   
-    <header>
-        <div class="logo">
-            <img class="img-logo" src="squads/squad-G/styles/img/logo squadG.png" alt="squadG">
-        </div>
+  <!-- Link de Acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- CABEÇALHO PADRONIZADO -->
+  <header id="topo" class="site-header">
+    <a href="home.html" class="header-brand" aria-label="Squad G - Página Inicial">
+      <img src="styles/img/logo squadG.png" alt="Logo do Squad G">
+    </a>
+
+    <button id="btn-menu-toggle" class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-principal">
+      <span class="hamburger-icon"></span>
+    </button>
 
     <div class="menu-container">
-      <nav id="menu-principal" class="nav">
+      <nav id="menu-principal" class="nav-menu" aria-label="Navegação Principal">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Sobre Nós</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Projetos</a></li>
-          <li><a href="#">Habilidades</a></li>
-          <li><a href="#">Depoimentos</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="habilidades.html">Habilidades</a></li>
+          <li><a href="depoimentos.html">Depoimentos</a></li>
+          <li><a href="case-de-sucesso.html">Case de Sucesso</a></li>
+          <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
     </div>
-    </header>
+  </header>
 
-    
-    <main>
-        
-      <section class="seção-principal">
-            <h2>Projetos dos integrantes do Squad G</h2>
-            <p>arquivos com imagens de projetos dos integrantes do squad G</p>
-        </section>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="conteudo-principal" class="projetos-main">
 
-        
-        <section>
-            <h3>Projetos </h3>
+    <section class="secao-topo-projetos" aria-labelledby="heading-projetos">
+      <h1 id="heading-projetos">Projetos dos Integrantes do Squad G</h1>
+      <p>Demonstração prática dos projetos individuais desenvolvidos pela equipe</p>
+    </section>
 
-            <div class="cards">
+    <!-- GRID DE PROJETOS -->
+    <section class="projetos-grid-cards" aria-label="Projetos desenvolvidos">
 
-                <div class="card">
-                    <img class="amanda_img" src="squads/squad-G/styles/img/projeto_amanda.jpg" alt="projeto_Amanda" width="100%">
-                    <h4>Amanda</h4>
-                    <p>Projeto desenvolvido por Amanda: 
-                    <br>Possuindo tela de cadastro e tela de login.
-                    </p>
-                </div>
+      <!-- PROJETO AMANDA -->
+      <article class="projeto-item-card">
+        <div class="projeto-img-wrapper">
+          <img src="styles/img/projeto_amanda.jpg" alt="Interface do Projeto desenvolvido por Amanda com tela de login">
+        </div>
+        <h2>Projeto Amanda</h2>
+        <p>Projeto desenvolvido por Amanda: possuindo tela de cadastro e tela de login com foco em usabilidade.</p>
+      </article>
 
-                <div class="card">
-                    <img class="projeto_guilherme" src="squads/squad-G/styles/img/projeto_guilherme.png" alt="Projeto_Guilherme" width="100%">
-                    <h4>Guilherme</h4>
-                    <p>Projeto desenvolvido por Guilherme:
-                    <br>Possuindo tela de cadastro e tela de login.
-                    </p>
-                </div>
-            </div>
+      <!-- PROJETO GUILHERME -->
+      <article class="projeto-item-card">
+        <div class="projeto-img-wrapper">
+          <img src="styles/img/projeto_guilherme.png" alt="Interface do Projeto desenvolvido por Guilherme">
+        </div>
+        <h2>Projeto Guilherme</h2>
+        <p>Projeto desenvolvido por Guilherme: possuindo tela de cadastro e tela de login com design estruturado.</p>
+      </article>
 
-            <div class="cards-2">
-                <div class="card">
-                    <img class="projeto_aylton" src="squads/squad-G/styles/img/projeto_aylton.png" alt="projeto_Aylton" width="100%">
-                    <h4>Aylton</h4>
-                    <p>Projeto desenvolvido por Aylton:
-                    <br>Tela de navegação inicial do Google.
-                    </p>
-                </div>
+      <!-- PROJETO AYLTON -->
+      <article class="projeto-item-card">
+        <div class="projeto-img-wrapper">
+          <img src="styles/img/projeto_aylton.png" alt="Interface do Projeto desenvolvido por Aylton reproduzindo a tela inicial do Google">
+        </div>
+        <h2>Projeto Aylton</h2>
+        <p>Projeto desenvolvido por Aylton: tela de navegação inicial do Google desenvolvida com precisão e fidelidade visual.</p>
+      </article>
 
-                <div class="card">
-                    <img src="" alt="Projeto_diogenes" width="100%">
-                    <h4>Diogenes</h4>
-                    <p></p>
-                </div>
+      <!-- PROJETO DIOGENES -->
+      <article class="projeto-item-card">
+        <div class="projeto-img-wrapper">
+          <div class="projeto-em-desenvolvimento">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+            </svg>
+            <strong>Módulos Web & Backend</strong>
+            <span>Estruturação técnica</span>
+          </div>
+        </div>
+        <h2>Projeto Diógenes</h2>
+        <p>Desenvolvimento focado em lógica de negócio, arquitetura web e integração de funcionalidades.</p>
+      </article>
 
-            </div>
-        </section>
-    </main>
+    </section>
+  </main>
 
-    
-    <footer>
-        <p>© 2025 — Squad G</p>
-    </footer>
+  <!-- RODAPÉ PADRONIZADO -->
+  <footer id="rodape" class="site-footer">
+    <p>Desenvolvido pelo Grupo de Estudantes (<strong>SQUAD G</strong>)</p>
+    <p>Faculdade Imaculada Conceição do Recife - 2025.</p>
+  </footer>
 
 </body>
 </html>

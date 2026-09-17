@@ -1,87 +1,104 @@
-<!-- Sobre - Squad G -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="sobre.css">
-  <title>Sobre - Squad G</title>
+  <meta name="description" content="Conheça a história e os integrantes do Squad G - Estudantes de ADS na Faculdade Imaculada Conceição do Recife (FICR).">
+  <title>Sobre Nós - Squad G</title>
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/sobre.css">
+  <link rel="stylesheet" href="styles/chatbot.css">
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/chatbot.js" defer></script>
 </head>
 
 <body>
-  <header>
-    <div class="logo">
-      <img src="squads/squad-G/styles/img/logo squadG.png" alt="Logo do Squad G">
-    </div>
+  <!-- Link de Acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- CABEÇALHO PADRONIZADO -->
+  <header id="topo" class="site-header">
+    <a href="home.html" class="header-brand" aria-label="Squad G - Página Inicial">
+      <img src="styles/img/logo squadG.png" alt="Logo do Squad G">
+    </a>
+
+    <button id="btn-menu-toggle" class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-principal">
+      <span class="hamburger-icon"></span>
+    </button>
 
     <div class="menu-container">
-      <nav id="menu-principal" class="nav">
+      <nav id="menu-principal" class="nav-menu" aria-label="Navegação Principal">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Sobre Nós</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Projetos</a></li>
-          <li><a href="#">Habilidades</a></li>
-          <li><a href="#">Depoimentos</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="habilidades.html">Habilidades</a></li>
+          <li><a href="depoimentos.html">Depoimentos</a></li>
+          <li><a href="case-de-sucesso.html">Case de Sucesso</a></li>
+          <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <div class="altura">
-      <div class="titulo-equipe">
-        <h1>Sobre Nós</h1>
-      </div>
-
-      <section class="quem-somos-box">
-        <div class="quem-esquerda">
-          <h2>Quem Somos</h2>
-        </div>
-
-        <div class="quem-direita">
-          <p>
-            Somos um grupo de estudantes dedicados ao desenvolvimento de soluções tecnológicas,
-            unindo criatividade, colaboração e foco em resultados. Nosso objetivo é transformar
-            ideias em experiências reais, aplicando boas práticas de design, programação e
-            inovação.
-          </p>
-        </div>
-      </section>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="conteudo-principal" class="sobre-main">
+    <div class="titulo-equipe">
+      <h1>Sobre Nós</h1>
     </div>
 
-    <div class="container">
-      <h1>Nossa Equipe</h1>
-
-      <div class="fotos">
-        <img src="squads/squad-G/styles/img/amanda.JPG" alt="Foto de perfil de Amanda">
-        <h2>Amanda</h2>
-        <p>Amanda Gabrielly, 25 anos, estudante de ADS 1º período FICR.</p>
+    <!-- BOX QUEM SOMOS -->
+    <section class="quem-somos-box" aria-labelledby="heading-quem-somos">
+      <div class="quem-esquerda">
+        <h2 id="heading-quem-somos">Quem Somos</h2>
       </div>
 
-      <div class="fotos">
-        <img src="squads/squad-G/styles/img/aylton.jpeg" alt="Foto de perfil de Aylton">
-        <h2>Aylton</h2>
-        <p>Aylton Oliveira, 20 anos, estudante de ADS 1º período FICR.</p>
+      <div class="quem-direita">
+        <p>
+          Somos um grupo de estudantes dedicados ao desenvolvimento de soluções tecnológicas,
+          unindo criatividade, colaboração e foco em resultados. Nosso objetivo é transformar
+          ideias em experiências reais, aplicando boas práticas de design, programação e
+          inovação.
+        </p>
       </div>
+    </section>
 
-      <div class="fotos">
-        <img src="squads/squad-G/styles/img/diogenes.jpeg" alt="Foto de perfil de Diógenes">
-        <h2>Diógenes</h2>
-        <p>Diógenes José, 34 anos, estudante de ADS 1º período FICR.</p>
-      </div>
+    <!-- SEÇÃO NOSSA EQUIPE -->
+    <section class="secao-equipe" aria-labelledby="heading-equipe">
+      <h2 id="heading-equipe" class="titulo-secao-equipe">Nossa Equipe</h2>
 
-      <div class="fotos">
-        <img src="squads/squad-G/styles/img/guilherme.jpeg" alt="Foto de perfil de Guilherme">
-        <h2>Guilherme</h2>
-        <p>Guilherme Henrique, 25 anos, estudante de ADS 1º período FICR.</p>
+      <div class="equipe-grid">
+        <article class="fotos">
+          <img src="styles/img/amanda.JPG" alt="Foto de perfil de Amanda Gabrielly">
+          <h2>Amanda</h2>
+          <p>Amanda Gabrielly, 25 anos, estudante de ADS 1º período FICR.</p>
+        </article>
+
+        <article class="fotos">
+          <img src="styles/img/aylton.jpeg" alt="Foto de perfil de Aylton Oliveira">
+          <h2>Aylton</h2>
+          <p>Aylton Oliveira, 20 anos, estudante de ADS 1º período FICR.</p>
+        </article>
+
+        <article class="fotos">
+          <img src="styles/img/diogenes.jpeg" alt="Foto de perfil de Diógenes José">
+          <h2>Diógenes</h2>
+          <p>Diógenes José, 34 anos, estudante de ADS 1º período FICR.</p>
+        </article>
+
+        <article class="fotos">
+          <img src="styles/img/guilherme.jpeg" alt="Foto de perfil de Guilherme Henrique">
+          <h2>Guilherme</h2>
+          <p>Guilherme Henrique, 25 anos, estudante de ADS 1º período FICR.</p>
+        </article>
       </div>
-    </div>
+    </section>
   </main>
 
-  <footer>
-    <p>Desenvolvido pelo Grupo de Estudantes (SQUAD G)</p>
+  <!-- RODAPÉ PADRONIZADO -->
+  <footer id="rodape" class="site-footer">
+    <p>Desenvolvido pelo Grupo de Estudantes (<strong>SQUAD G</strong>)</p>
     <p>Faculdade Imaculada Conceição do Recife - 2025.</p>
   </footer>
 </body>

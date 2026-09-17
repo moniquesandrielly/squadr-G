@@ -1,145 +1,145 @@
-/* Estilos da página Sobre - Squad G */
+/* ==========================================================================
+   ESTILOS DA PÁGINA SOBRE NÓS - SQUAD G
+   ========================================================================== */
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
-  background-color: #d3d3d3;
-  color: #333;
-}
-
-header {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-}
-
-header img {
-  width: auto;
-  height: 375px;
-}
-
-.menu-container ul {
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.menu-container ul li a {
-  color: #000000;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.menu-container ul li a:hover {
-  text-decoration: underline;
-}
-
-main {
+main.sobre-main {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-}
-
-.altura {
-  height: 575px;
+  padding: 40px 20px;
 }
 
 .titulo-equipe h1 {
-  width: 100%;
-  margin-top: 30px;
-  color: #000000;
-  font-size: 42px;
+  color: #1f2937;
+  font-size: 2.4rem;
+  font-weight: 800;
   text-align: center;
+  margin: 0 0 30px 0;
 }
 
+/* Box Quem Somos */
 .quem-somos-box {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  width: 70%;
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 40px;
+  gap: 32px;
   background: #ffffff;
-  border-radius: 8px;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  margin-bottom: 50px;
+  align-items: center;
 }
 
 .quem-esquerda h2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #000000;
-  font-size: 42px;
-  font-weight: 600;
+  color: #111827;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0;
   text-align: center;
 }
 
 .quem-direita p {
-  padding-left: 20px;
-  color: #000000;
-  font-size: 17px;
-  line-height: 1.6;
-  text-align: justify;
+  color: #374151;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
 }
 
-.container {
-  margin-top: 50px;
+/* Seção Nossa Equipe */
+.secao-equipe {
   text-align: center;
+  margin-top: 20px;
 }
 
-.container h1 {
-  margin-bottom: 30px;
-  color: #000000;
-  font-size: 42px;
+.secao-equipe h2.titulo-secao-equipe {
+  color: #111827;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 36px;
+  position: relative;
+  display: inline-block;
+}
+
+.secao-equipe h2.titulo-secao-equipe::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #111827;
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Grid de Integrantes */
+.equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  justify-content: center;
 }
 
 .fotos {
-  display: inline-block;
-  width: 230px;
-  margin: 15px;
-  padding: 15px;
   background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.fotos:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.12);
 }
 
 .fotos img {
   width: 100%;
-  height: 260px;
+  max-width: 200px;
+  height: 220px;
   object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .fotos h2 {
-  margin-top: 15px;
-  color: #000000;
-  font-size: 22px;
+  color: #1f2937;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
 }
 
 .fotos p {
-  color: #000000;
-  font-size: 15px;
-  font-weight: bold;
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
-footer {
-  margin-top: 60px;
-  padding: 20px;
-  background-color: #ffffff;
-  color: #000000;
-  font-size: 15px;
-  font-weight: bold;
-  text-align: center;
-}
+/* Responsividade */
+@media (max-width: 860px) {
+  .quem-somos-box {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 16px;
+    text-align: center;
+  }
 
-footer p {
-  text-align: center;
+  .quem-esquerda h2 {
+    font-size: 1.8rem;
+  }
+
+  .quem-direita p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .titulo-equipe h1 {
+    font-size: 2rem;
+  }
 }

@@ -1,0 +1,6 @@
+{
+  "name": "Squad G Portfolio",
+  "description": "Portfolio website for Squad G featuring team projects, skills, services, testimonials, and contact info",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

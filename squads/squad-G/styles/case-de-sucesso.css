@@ -1,105 +1,235 @@
-/* Estilos base - personalize para seu squad */
+/* ==========================================================================
+   ESTILOS DA PÁGINA CASE DE SUCESSO - SQUAD G (CSS NATIVO PURO)
+   ========================================================================== */
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               'Segoe UI', sans-serif;
-    background-color: #ffffff;
-  @apply text-gray-700;
-}
-main {
-  @apply pt-4 md:pt-8;
+main.case-main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-
-.header {
-  @apply sticky top-0 z-50 bg-white shadow-lg p-4 flex flex-col md:flex-row justify-between items-center;
-}
-
-.menu-container {
-  @apply w-full md:w-auto mt-2 md:mt-0;
-}
-
-.nav ul {
-  @apply flex justify-center md:justify-end space-x-4 md:space-x-8;
-}
-
-.nav a {
-  @apply text-gray-600 hover:text-indigo-600 font-medium transition duration-150 text-sm md:text-base;
-}
-
+/* Hero do Case */
 .hero-case {
-    @apply bg-indigo-700 text-white py-16 md:py-24 mb-10 shadow-xl;
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.hero-content {
-    @apply max-w-5xl mx-auto px-4 text-center;
+.hero-case-content {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.hero-content h1 {
-    @apply text-3xl md:text-5xl font-extrabold mb-4;
+.hero-case-content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  line-height: 1.25;
 }
 
-.hero-content p {
-    @apply text-xl md:text-2xl font-light mb-6 opacity-90;
+.hero-case-content p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #e5e7eb;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.tags {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .tags span {
-    @apply inline-block bg-indigo-500 text-white text-xs font-semibold px-3 py-1 rounded-full mr-2;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* Seções do Case */
 .case-section {
-    @apply max-w-5xl mx-auto px-4 py-10 md:py-16;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 50px 20px;
 }
 
 .case-section h2 {
-    @apply text-3xl md:text-4xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-400 pb-2;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 20px 0;
+  position: relative;
+  display: inline-block;
+}
+
+.case-section h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #111827;
+  margin: 8px 0 0 0;
+  border-radius: 2px;
 }
 
 .case-section p {
-    @apply text-lg leading-relaxed mb-4;
+  color: #374151;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0 0 16px 0;
+}
+
+/* Lista de Desafios */
+.lista-desafios {
+  list-style: disc;
+  margin: 20px 0 0 24px;
+  padding: 0;
+  color: #374151;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* Grid de Soluções */
+.solucoes-wrapper {
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .solution-grid {
-    @apply grid grid-cols-1 md:grid-cols-3 gap-8 mt-6;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
 }
 
 .solution-item {
-    @apply p-6 bg-white rounded-lg shadow-md border-t-4 border-indigo-500;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid #111827;
+  transition: transform 0.2s ease;
+}
+
+.solution-item:hover {
+  transform: translateY(-3px);
 }
 
 .solution-item h3 {
-    @apply text-xl font-semibold text-gray-900 mb-2;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 10px 0;
 }
+
+.solution-item p {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Grid de Métricas / Resultados */
 .metrics-grid {
-    @apply grid grid-cols-1 sm:grid-cols-3 gap-6 text-center mt-8;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin: 36px 0;
+  text-align: center;
 }
 
 .metric-box {
-    @apply bg-white p-6 rounded-lg shadow-xl border-b-8 border-indigo-600;
+  background-color: #ffffff;
+  padding: 28px 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  border-bottom: 6px solid #111827;
 }
 
 .metric-number {
-    @apply text-5xl font-extrabold text-indigo-700 block;
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1;
+  margin-bottom: 8px;
 }
 
 .metric-label {
-    @apply text-sm text-gray-500 uppercase tracking-widest mt-1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4b5563;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
 }
+
+/* Testemunho da CEO */
 .testimonial-container {
-    @apply flex items-center bg-gray-100 p-6 rounded-lg shadow-inner;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+  margin-top: 40px;
 }
 
 .client-foto {
-    @apply w-16 h-16 rounded-full object-cover mr-4 flex-shrink-0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid #111827;
 }
 
 .testimonial-text p {
-    @apply italic text-base mb-1;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+  line-height: 1.6;
 }
 
 .testimonial-text cite {
-    @apply not-italic font-semibold text-indigo-600 block text-right;
+  font-style: normal;
+  font-weight: 700;
+  color: #111827;
+  display: block;
+  font-size: 0.95rem;
 }
-.footer {
-    @apply text-center p-4 bg-gray-800 text-white mt-8;
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero-case-content h1 {
+    font-size: 1.9rem;
+  }
+  .hero-case-content p {
+    font-size: 1.05rem;
+  }
+  .case-section h2 {
+    font-size: 1.8rem;
+  }
+  .testimonial-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .testimonial-text cite {
+    text-align: center;
+  }
 }

@@ -1,93 +1,261 @@
-/* Estilos base - Squad G */
+/* ==========================================================================
+   ESTILOS DA PÁGINA HOME - SQUAD G
+   ========================================================================== */
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: rgb(210, 208, 208);
-}
-
-ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-bottom: 15px;
-  list-style: none;
-}
-
-li {
-  display: flex;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.hero {
-  width: 100%;
-  padding: 40px 20px;
+/* Hero Section */
+.hero-banner {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.94) 0%, rgba(31, 41, 55, 0.92) 100%),
+              url('img/background.avif') center/cover no-repeat;
+  color: #ffffff;
+  padding: 80px 24px;
   text-align: center;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.hero h1 a {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 2.5rem;
-}
-
-.projetos,
-.contato {
-  max-width: 900px;
+.hero-content {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 60px 20px;
 }
 
-.projeto {
-  padding: 20px;
-  margin-bottom: 20px;
-  background-color: white;
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 0 0 28px 0;
+  color: #e5e7eb;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #111827;
+  padding: 12px 28px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ffffff;
 }
 
-.form-contato input[type="text"],
-.form-contato input[type="email"],
-.form-contato textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1em;
+.btn-primary:hover {
+  background-color: #f3f4f6;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.form-contato button[type="submit"] {
-  padding: 10px 20px;
-  color: white;
-  background-color: #286ea7;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 10px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-.footer {
-  margin-top: 40px;
-  padding: 20px 0;
-  color: #bbb;
-  font-size: 0.9em;
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Seções de Conteúdo */
+.home-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.section-heading {
   text-align: center;
-  background-color: #343a40;
+  margin-bottom: 36px;
+}
+
+.section-heading h2 {
+  font-size: 2rem;
+  color: #111827;
+  margin: 0 0 10px 0;
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #111827;
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+.section-heading p {
+  color: #4b5563;
+  font-size: 1.05rem;
+}
+
+/* Grid de Projetos */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.projeto-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projeto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.12);
+}
+
+.projeto-card h3 {
+  font-size: 1.3rem;
+  color: #111827;
+  margin: 0 0 12px 0;
+}
+
+.projeto-card p {
+  color: #4b5563;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.projeto-card a {
+  align-self: flex-start;
+  color: #111827;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.projeto-card a:hover {
+  text-decoration: underline;
+  color: #374151;
+}
+
+/* Seção de Contato Rápido */
+.contato-wrapper {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 36px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.12);
+}
+
+.btn-submit {
+  background-color: #111827;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  align-self: flex-start;
+}
+
+.btn-submit:hover {
+  background-color: #1f2937;
+  transform: translateY(-1px);
+}
+
+.btn-submit:focus-visible {
+  outline: 3px solid #111827;
+  outline-offset: 2px;
+}
+
+/* Mensagem de confirmação de envio */
+.form-feedback {
+  margin-top: 14px;
+  padding: 12px;
+  background-color: #dcfce7;
+  color: #166534;
+  border-radius: 8px;
+  font-weight: 600;
+  display: none;
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+  .hero-content p {
+    font-size: 1.05rem;
+  }
+  .contato-wrapper {
+    padding: 24px 18px;
+  }
+  .btn-submit {
+    width: 100%;
+  }
 }

@@ -1,71 +1,145 @@
-<!-- Contato - Squad G -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="contato.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Entre em contato com os integrantes do Squad G através do LinkedIn, Instagram e E-mail.">
   <title>Contato - Squad G</title>
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/contato.css">
+  <link rel="stylesheet" href="styles/chatbot.css">
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/chatbot.js" defer></script>
 </head>
+
 <body>
-   <header>
-    <div class="logo">
-      <img src="squads/squad-G/styles/img/logo squadG.png" alt="logo">
-    </div>
+  <!-- Link de Acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- CABEÇALHO PADRONIZADO -->
+  <header id="topo" class="site-header">
+    <a href="home.html" class="header-brand" aria-label="Squad G - Página Inicial">
+      <img src="styles/img/logo squadG.png" alt="Logo do Squad G">
+    </a>
+
+    <button id="btn-menu-toggle" class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-principal">
+      <span class="hamburger-icon"></span>
+    </button>
 
     <div class="menu-container">
-      <nav id="menu-principal" class="nav">
+      <nav id="menu-principal" class="nav-menu" aria-label="Navegação Principal">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Sobre Nós</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Projetos</a></li>
-          <li><a href="#">Habilidades</a></li>
-          <li><a href="#">Depoimentos</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="habilidades.html">Habilidades</a></li>
+          <li><a href="depoimentos.html">Depoimentos</a></li>
+          <li><a href="case-de-sucesso.html">Case de Sucesso</a></li>
+          <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <div class="titulo-contatos">
-    <img src="squads/squad-G/styles/img/logocontatos" alt="logo-contatos">
-    <p>Confira ao lado as nossas Redes Sociais.</p>
-  </div>
 
-  <div class="fotos">
-        <img src="squads/squad-G/styles/img/amanda.JPG" alt="Foto perfil Amanda">
-        <h2>Amanda</h2>
-        <img src="squads/squad-G/styles/img/instagrampng" alt="icon-contato">
-        <img src="squads/squad-G/styles/img/linkedinpng" alt="icon-contato">
-        <img src="squads/squad-G/styles/img/mailpng" alt="icon-contato">
-  </div>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="conteudo-principal" class="contato-main">
+    <div class="contato-layout">
 
-  <div class="fotos">
-        <img src="squads/squad-G/styles/img/aylton.JPG" alt="Foto perfil Aylton">
-        <h2>Aylton</h2>
-        <img src="squads/squad-G/styles/img/instagrampng" alt="icon-contato">
-        <img src="squads/squad-G/styles/img/linkedinpng" alt="icon-contato">
-        <img src="squads/squad-G/styles/img/mailpng" alt="icon-contato">
-  </div>
+      <!-- COLUNA LATERAL DE APRESENTAÇÃO -->
+      <section class="titulo-contatos" aria-labelledby="heading-contato">
+        <img src="styles/img/logocontatos.png" alt="Logo Contatos Squad G">
+        <p id="heading-contato">Confira ao lado as nossas Redes Sociais.</p>
+        <div class="contato-info-extra">
+          <p>Faculdade Imaculada Conceição do Recife (FICR)</p>
+          <p>Recife - PE • Turma de ADS 2025</p>
+        </div>
+      </section>
 
-  <div class="fotos">
-        <img src="squads/squad-G/styles/img/diogenes.JPG" alt="Foto perfil Diogenes">
-        <h2>Diógenes</h2>
-        <img src="squads/squad-G/styles/img/instagrampng" alt="icon-contato">
-        <img src="squads/squad-G/styles/img/linkedinpng" alt="icon-contato">
-        <img src="squads/squad-G/styles/img/mailpng" alt="icon-contato">
-  </div>
+      <!-- GRID DE CARDS DOS INTEGRANTES -->
+      <section class="integrantes-contato-grid" aria-label="Contatos dos integrantes">
 
-  <div class="fotos">
-        <img src="squads/squad-G/styles/img/guilherme.JPG" alt="Foto perfil Guilherme">
-        <h2>Guilherme</h2>
-        <img src="squads/squad-G/styles/img/instagrampng" alt="icon-contato">
-        <img src="squads/squad-G/styles/img/linkedinpng" alt="icon-contato">
-        <img src="squads/squad-G/styles/img/mailpng" alt="icon-contato">
-  </div>
-  <main>
-     <footer>
-    <p>Desenvolvido pelo Grupo de Estudantes (SQUAD G)</p>
+        <!-- AMANDA -->
+        <article class="card-contato-membro">
+          <img class="avatar-foto" src="styles/img/amanda.JPG" alt="Foto de perfil de Amanda Gabrielly">
+          <h2>Amanda</h2>
+          <span class="cargo-tag">Front-End & UI/UX</span>
+          <div class="contato-icones">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Amanda" title="Instagram">
+              <img src="styles/img/instagrampng.png" alt="Ícone Instagram">
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Amanda" title="LinkedIn">
+              <img src="styles/img/linkedinpng.png" alt="Ícone LinkedIn">
+            </a>
+            <a href="mailto:amanda.squadg@ficr.edu.br" aria-label="Enviar e-mail para Amanda" title="E-mail">
+              <img src="styles/img/mailpng.png" alt="Ícone E-mail">
+            </a>
+          </div>
+        </article>
+
+        <!-- AYLTON -->
+        <article class="card-contato-membro">
+          <img class="avatar-foto" src="styles/img/aylton.jpeg" alt="Foto de perfil de Aylton Oliveira">
+          <h2>Aylton</h2>
+          <span class="cargo-tag">Front-End & UI/UX</span>
+          <div class="contato-icones">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Aylton" title="Instagram">
+              <img src="styles/img/instagrampng.png" alt="Ícone Instagram">
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Aylton" title="LinkedIn">
+              <img src="styles/img/linkedinpng.png" alt="Ícone LinkedIn">
+            </a>
+            <a href="mailto:aylton.squadg@ficr.edu.br" aria-label="Enviar e-mail para Aylton" title="E-mail">
+              <img src="styles/img/mailpng.png" alt="Ícone E-mail">
+            </a>
+          </div>
+        </article>
+
+        <!-- DIOGENES -->
+        <article class="card-contato-membro">
+          <img class="avatar-foto" src="styles/img/diogenes.jpeg" alt="Foto de perfil de Diógenes José">
+          <h2>Diógenes</h2>
+          <span class="cargo-tag">Front-End & UI/UX</span>
+          <div class="contato-icones">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Diógenes" title="Instagram">
+              <img src="styles/img/instagrampng.png" alt="Ícone Instagram">
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Diógenes" title="LinkedIn">
+              <img src="styles/img/linkedinpng.png" alt="Ícone LinkedIn">
+            </a>
+            <a href="mailto:diogenes.squadg@ficr.edu.br" aria-label="Enviar e-mail para Diógenes" title="E-mail">
+              <img src="styles/img/mailpng.png" alt="Ícone E-mail">
+            </a>
+          </div>
+        </article>
+
+        <!-- GUILHERME -->
+        <article class="card-contato-membro">
+          <img class="avatar-foto" src="styles/img/guilherme.jpeg" alt="Foto de perfil de Guilherme Henrique">
+          <h2>Guilherme</h2>
+          <span class="cargo-tag">Front-End & UI/UX</span>
+          <div class="contato-icones">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Guilherme" title="Instagram">
+              <img src="styles/img/instagrampng.png" alt="Ícone Instagram">
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Guilherme" title="LinkedIn">
+              <img src="styles/img/linkedinpng.png" alt="Ícone LinkedIn">
+            </a>
+            <a href="mailto:guilherme.squadg@ficr.edu.br" aria-label="Enviar e-mail para Guilherme" title="E-mail">
+              <img src="styles/img/mailpng.png" alt="Ícone E-mail">
+            </a>
+          </div>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- RODAPÉ PADRONIZADO -->
+  <footer id="rodape" class="site-footer">
+    <p>Desenvolvido pelo Grupo de Estudantes (<strong>SQUAD G</strong>)</p>
     <p>Faculdade Imaculada Conceição do Recife - 2025.</p>
   </footer>
+
 </body>
 </html>

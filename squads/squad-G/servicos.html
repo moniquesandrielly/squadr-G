@@ -1,105 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="servicos.css">
-  <title>Portfolio — Serviços & Preços</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Serviços e planos de desenvolvimento web, Design UI/UX e Branding oferecidos pelo Squad G.">
+  <title>Serviços & Preços - Squad G</title>
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/servicos.css">
+  <link rel="stylesheet" href="styles/chatbot.css">
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/chatbot.js" defer></script>
 </head>
 
 <body>
-  <main>
-    <h1>Serviços</h1>
+  <!-- Link de Acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
 
-    <section class="servicos">
+  <!-- CABEÇALHO PADRONIZADO -->
+  <header id="topo" class="site-header">
+    <a href="home.html" class="header-brand" aria-label="Squad G - Página Inicial">
+      <img src="styles/img/logo squadG.png" alt="Logo do Squad G">
+    </a>
 
-      <div class="design">
+    <button id="btn-menu-toggle" class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-principal">
+      <span class="hamburger-icon"></span>
+    </button>
+
+    <div class="menu-container">
+      <nav id="menu-principal" class="nav-menu" aria-label="Navegação Principal">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="habilidades.html">Habilidades</a></li>
+          <li><a href="depoimentos.html">Depoimentos</a></li>
+          <li><a href="case-de-sucesso.html">Case de Sucesso</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="conteudo-principal" class="servicos-main">
+    <h1 class="servicos-titulo-principal">Nossos Serviços</h1>
+
+    <!-- GRID DE SERVIÇOS -->
+    <section class="servicos-grid" aria-label="Lista de Serviços">
+
+      <article class="servico-card">
         <h2>Design de UI/UX</h2>
-        <p>Wireframes, protótipos e design responsivo.</p>
-
+        <p>Wireframes, protótipos e design responsivo focado na melhor usabilidade.</p>
         <ul>
           <li>Protótipos em Figma</li>
           <li>Design responsivo</li>
         </ul>
-      </div>
+      </article>
 
-      <hr>
-
-      <div>
+      <article class="servico-card">
         <h2>Desenvolvimento Front-end</h2>
-        <p>Landing pages, sites estáticos e interfaces em HTML/CSS/JS.</p>
-
+        <p>Landing pages, sites estáticos e interfaces modernas em HTML/CSS/JS.</p>
         <ul>
           <li>Componentes reutilizáveis</li>
           <li>SEO básico</li>
         </ul>
-      </div>
+      </article>
 
-      <hr>
-
-      <div>
+      <article class="servico-card">
         <h2>Branding & Identidade</h2>
-        <p>Logotipos, paletas e guias de estilo.</p>
-
+        <p>Logotipos, paletas de cores e guias visuais completos de estilo.</p>
         <ul>
           <li>Manual básico da marca</li>
           <li>Fichas de aplicação</li>
         </ul>
-      </div>
+      </article>
 
     </section>
 
-    <section class="planos">
-      <h1>Planos e Preços</h1>
+    <!-- SEÇÃO PLANOS E PREÇOS -->
+    <section class="planos-secao" aria-labelledby="heading-planos">
+      <h2 id="heading-planos">Planos e Preços</h2>
 
-      <table>
-        <tr>
-          <th>Plano</th>
-          <th>Preço</th>
-          <th>Descrição</th>
-        </tr>
+      <div class="tabela-container">
+        <table class="tabela-precos">
+          <thead>
+            <tr>
+              <th scope="col">Plano</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Descrição e Entregáveis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Básico</td>
+              <td class="preco-destaque">R$ 799</td>
+              <td>
+                <ul>
+                  <li>1 página responsiva</li>
+                  <li>Entrega em 7 dias</li>
+                  <li>Suporte por 7 dias</li>
+                </ul>
+              </td>
+            </tr>
 
-        <tr>
-          <td>Básico</td>
-          <td>R$ 799</td>
-          <td>
-            <ul>
-              <li>1 página responsiva</li>
-              <li>Entrega em 7 dias</li>
-              <li>Suporte por 7 dias</li>
-            </ul>
-          </td>
-        </tr>
+            <tr>
+              <td>Pro</td>
+              <td class="preco-destaque">R$ 1.899</td>
+              <td>
+                <ul>
+                  <li>Até 6 páginas</li>
+                  <li>Design + Front-end</li>
+                  <li>Entrega em 12 dias</li>
+                  <li>Suporte por 30 dias</li>
+                </ul>
+              </td>
+            </tr>
 
-        <tr>
-          <td>Pro</td>
-          <td>R$ 1.899</td>
-          <td>
-            <ul>
-              <li>Até 6 páginas</li>
-              <li>Design + Front-end</li>
-              <li>Entrega em 12 dias</li>
-              <li>Suporte por 30 dias</li>
-            </ul>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Enterprise</td>
-          <td>R$ 4.800</td>
-          <td>
-            <ul>
-              <li>Projeto sob medida</li>
-              <li>Entrega priorizada</li>
-              <li>Suporte estendido</li>
-            </ul>
-          </td>
-        </tr>
-      </table>
+            <tr>
+              <td>Enterprise</td>
+              <td class="preco-destaque">R$ 4.800</td>
+              <td>
+                <ul>
+                  <li>Projeto sob medida</li>
+                  <li>Entrega priorizada</li>
+                  <li>Suporte estendido</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
   </main>
+
+  <!-- RODAPÉ PADRONIZADO -->
+  <footer id="rodape" class="site-footer">
+    <p>Desenvolvido pelo Grupo de Estudantes (<strong>SQUAD G</strong>)</p>
+    <p>Faculdade Imaculada Conceição do Recife - 2025.</p>
+  </footer>
 </body>
-
 </html>
-
